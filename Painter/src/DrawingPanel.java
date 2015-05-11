@@ -1,13 +1,14 @@
-import java.awt.MouseInfo;
+
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.awt.Color;
+
 import javax.swing.JPanel;
 public class DrawingPanel extends JPanel implements MouseListener, MouseMotionListener {
-
+	MyLine ln;
 	Color purples = new Color(139, 0, 139);
 	Color oranges = new Color(255, 140, 0);
 	Color navys = new Color(0, 0, 128);
@@ -17,12 +18,13 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	Color maroons = new Color (128, 0, 0);
 	Color greys = new Color (128, 128, 128);
 	Color lpink = new Color (255, 204, 204);
-
+	MyShape bla;
 	
 	int x1, x2 , y1 , y2 ;
 	RectPanel rect ;
 	List<MyShape> shapeList;
-	
+	int offSetX, offSetY;
+
 	public DrawingPanel(RectPanel rp, List<MyShape> sl) {
 		this.rect = rp ;
 		this.shapeList = sl ;
@@ -32,19 +34,20 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("Click");
-		String a = Enumo.keuze.name();
+		String a;
+		a = Enumo.keuze.name();
 		
 		if (a == "cleanAll"){
 			rect.deleteAll();
 		}
-				
+	
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		String b = Enumo.kleur.name();
-		
+		String b;
+		b = Enumo.kleur.name();
 		if (b == "black")
 			rect.color = Color.black;	
 		if (b == "white")
@@ -79,7 +82,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			rect.color = greys;
 		if (b == "pink")
 			rect.color = lpink;
-		//System.out.println("nuh" + b);
+	
 		}
 
 	@Override
@@ -106,10 +109,15 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			if (a == "delete")
 				rect.deleteShape(e.getX(), e.getY());
 			if (a == "text"){
-				char[] text = {'T', 'y', 'p', 'e'};
+				String text = "Type Hier";
 				rect.addText (e.getX(), e.getY(), text);
+			if( a == "drag"){
+				offSetX = e.getX();
+				offSetY = e.getY();
+				}
+			
 			}
-		
+
 			
 			System.out.println ("Pressed");
 		}
@@ -118,7 +126,11 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println ("Release");
-	
+		String a ;
+		a = Enumo.keuze.name();
+		if (a == "drag"){
+			rect.dragShape(e.getX(), e.getY(), offSetX, offSetY, x2, y2);
+		}
 	}
 
 	@Override
@@ -126,15 +138,26 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		// TODO Auto-generated method stub
 		this.x2 = e.getX();
 		this.y2 = e.getY();
-		
 		String a ;
 		a = Enumo.keuze.name();
 
-		if (a != "delete" && a != "brush" && a != "cleanAll")
+		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow"){
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
+		}
+
 		if (a == "brush"){
-			rect.addEllipse(e.getX()+10,e.getY()+10, e.getX()-10,e.getY()-10);
+	        rect.addLine(x2, y2, e.getX(), e.getY());
 		}	
+
+		if (a == "rainbow"){
+	        rect.rainbowLine(x2, y2, e.getX(), e.getY());
+		}	
+		
+		if (a == "eraser"){
+			rect.addErase(x2,y2,e.getX(), e.getY());
+		}
+		
+		
 		rect.repaint();
 	}
 

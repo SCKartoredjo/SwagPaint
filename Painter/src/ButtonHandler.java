@@ -1,16 +1,22 @@
-import java.awt.Color;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.event.ChangeEvent;
+
 
 
 public class ButtonHandler implements ActionListener {
 
+	OptionPanel Optp;
 	RectPanel rectp;
 	DrawingPanel drawp;
 	
-	public ButtonHandler (RectPanel rp){
+	public ButtonHandler (OptionPanel op){
+		this.Optp = op;
+	}
+
+	public ButtonHandler(RectPanel rp) {
+		// TODO Auto-generated constructor stub
 		this.rectp = rp;
 	}
 
@@ -21,17 +27,9 @@ public class ButtonHandler implements ActionListener {
 		String ac = e.getActionCommand();
 		
 		System.out.println("Dit is de ac: " + ac + " ");
+				
 		
-		if (ac.equals("Change Color")) {
-		
-		int r = (int)(Math.random()*256);
-		int g = (int)(Math.random()*256);
-		int b = (int)(Math.random()*256);
-		rectp.color = new Color(r, g, b);
-		rectp.repaint();
-		} 
-		
-		else if (ac.equals("square")){
+		if (ac.equals("square")){
 			//TODO add square
 			Enumo.superenum(1);	
 		}
@@ -67,7 +65,7 @@ public class ButtonHandler implements ActionListener {
 		else if (ac.equals("yellow")){
 			Enumo.superenum(10);
 		}
-		else if (ac.equals("cyaan")){
+		else if (ac.equals("cyan")){
 			Enumo.superenum(11);
 		}
 		else if (ac.equals("magenta")){
@@ -101,10 +99,18 @@ public class ButtonHandler implements ActionListener {
 			Enumo.superenum(19);
 		else if (ac.equals("brown"))
 			Enumo.superenum(20);
-		else if (ac.equals("lightpink"))
+		else if (ac.equals("pink"))
 			Enumo.superenum(21);
 		else if (ac.equals("text"))
 			Enumo.superenum(22);
+		else if (ac.equals("eraser"))
+			Enumo.superenum(23);
+		else if (ac.equals("drag"))
+			Enumo.superenum(24);
+		else if (ac.equals(" ")){
+			Enumo.superenum(30);
+	
+		}
 	}
 	
 }

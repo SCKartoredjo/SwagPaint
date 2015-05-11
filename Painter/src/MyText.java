@@ -1,24 +1,14 @@
-import java.util.Scanner;
 
 public class MyText {
 
-	char[] newText = {};
-	int x = 0;
-	int y = 0;
-	int lengteChar = 0;
-	Boolean backspace ;
-	Scanner cin = new Scanner(System.in);
+	String text;
+	int x;
+	int y;
 	
-	public MyText(int x, int y, char[] text){
+	public MyText(int x, int y, String text){
+		this.text = text ;
 		this.x = x;
 		this.y = y ;
-		this.newText = text;
-		this.lengteChar = text.length;
-		changeText (text);
-	}
-	
-	public void changeText (char[] newText){
-			System.out.println("lengteChar: " + lengteChar + " " +  "x=" + " " + x + "y=" + y);	
 	}
 	
 }

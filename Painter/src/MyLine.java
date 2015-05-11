@@ -18,6 +18,7 @@ public class MyLine extends MyShape {
 		this.color = color;
 		this.troo = troo;
 		this.strokeWidth = strokeWidth ;
+
 	}
 
 	@Override

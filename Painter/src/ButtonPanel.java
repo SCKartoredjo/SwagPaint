@@ -3,15 +3,13 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.lang.reflect.Field;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
-import javax.swing.JTextField;
 
 public class ButtonPanel extends JPanel {
-	public ButtonPanel(RectPanel rp) {
+	public ButtonPanel(RectPanel rp, OptionPanel op, ColorPanel cp) {
 		super();
 		// Add a button to the panel. The argument to the JButton constructor
 		// will become the text on the button.
@@ -27,7 +25,8 @@ public class ButtonPanel extends JPanel {
 		Color lightpink = new Color (255, 204, 204);
 		
 		//JPanel pane = new JPanel(new GridBagLayout());
-		rp.setLayout(new GridBagLayout());
+		op.setLayout(new GridBagLayout());
+		cp.setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		JButton button;
 		
@@ -35,88 +34,97 @@ public class ButtonPanel extends JPanel {
 		//c.insets = new Insets(5,5,5,5);
 		//c.anchor = GridBagConstraints.PAGE_START;
 		
-		button = new JButton ("Save");
-		c.gridx = 0;
-		c.gridy = 0;
-		c.insets = new Insets(0,0,0,50);
-		rp.add(button, c);
-		button.addActionListener(new ButtonHandler(rp));
+	
 		
-		JSlider stroke = new JSlider (0, 30) ; 
-		c.gridx = 2;
-		c.gridy = 0;
-		//c.gridwidth = 2;
-		rp.add(stroke);
-		stroke.addChangeListener(new SliderHandler(rp));	
 		
-		String[] buttonTexts = {"square", "ellipse", "line", "brush", "text","delete", "clean all"}; 
-		ButtonHandler bh = new ButtonHandler(rp);
+		String[] buttonTexts = {"drag","square", "ellipse", "line", "brush", "text","eraser","delete", "clean all"}; 
+		ButtonHandler bh = new ButtonHandler(op);
 		for (int i = 0; i < buttonTexts.length; i++)
 		{
 			button = new JButton(buttonTexts[i]);
-			c.insets = new Insets(0,0,0,50);
+			c.insets = new Insets(0,10,0,10);
+			if (i == 0)
+				c.insets= new Insets(0,10,50,10);
 			if (i == 5)
-				c.insets = new Insets(50,0,0,50);
+				c.insets = new Insets(50,10,0,10);
 			c.gridx = 0;
 			c.gridy = 2+i;
 			c.ipady = 20 ;
-			rp.add(button, c);
+			op.add(button, c);
 			button.addActionListener(bh);
 		}
 		
-		JTextField textField = new JTextField(20);
-		c.gridx = 0;
-		c.gridy = 20;
-		c.ipady = 20 ;
-		rp.add(textField, c);
-		//textField.addKeyListener(new KeyHandler());
-		
-		
-		c.insets = new Insets(0,0,0,0);
+		c.insets = new Insets(10,0,0,0);
 		
 		//Color Buttons
-		String[] colourButtons = {"black", "white", "red", "green", "blue", "yellow", "cyan", "magenta", "purple", "grey", "maroon", "royalblue", "navy", "orange", "brown", "pink"};
-		Color[] buttonColors = {Color.black, Color.white, Color.red, Color.green, Color.blue, Color.yellow, Color.cyan, Color.magenta, purple, grey, maroon, royalblue, navy, orange, brown, lightpink };
+		String[] colourButtons = {"black", "grey", "white", "pink", "red", "maroon", "orange", "brown", "yellow", "green", "cyan", "blue", "magenta", "purple", "royalblue", "navy"};
+		Color[] buttonColors = {Color.black, grey, Color.white, lightpink , Color.red, maroon, orange, brown, Color.yellow, Color.green, Color.cyan, Color.blue, Color.magenta, purple, royalblue, navy};
 		
 		for (int i = 0; i < colourButtons.length; i++)
 		{
 			button = new JButton (colourButtons[i]);
-			if (i >= (colourButtons.length/2)){		
-				c.gridx = 4+(i-8);
+			if (i >= (colourButtons.length/2)){
+				c.insets = new Insets(0,0,10,0);
+				c.gridx = 5+(i-8);
 				c.gridy = 1;
 			}
 			else{
-				c.gridx = 4+i;
+				c.gridx = 5+i;
 				c.gridy = 0;
 			}
 			
-			rp.add(button, c);
+			cp.add(button, c);
 			button.setBackground(buttonColors[i]);
 			button.setForeground(buttonColors[i]);
 			button.setPreferredSize(new Dimension(75,20));
-			button.addActionListener(new ButtonHandler(rp));
+			button.addActionListener(new ButtonHandler(op));
 		}
 		
 		c. weightx = 0.0;
-		c.insets = new Insets(0,0,0,50);
-	
-		button = new JButton ("nofill");
-		c.gridx = 2;
-		c.gridy = 1;
-		rp.add(button, c);
-		button.addActionListener(new ButtonHandler(rp));
 		
+		
+
+		JSlider stroke = new JSlider (0, 30) ; 
+		c.gridx = 0;
+		c.gridy = 0;
+		c.gridwidth = 4;
+		stroke.setOpaque(false);
+		cp.add(stroke, c);
+		stroke.addChangeListener(new SliderHandler(rp));
+		
+		c.fill = GridBagConstraints.NONE;
+		
+		button = new JButton ("nofill");
+		c.gridx = 0;
+		c.gridy = 1;
+		c.gridwidth = 2;
+		cp.add(button, c);
+		button.addActionListener(new ButtonHandler(rp));
+
 		button = new JButton ("filled");
 		c.gridx = 3;
 		c.gridy = 1;
-		rp.add(button, c);
+		c.gridwidth =2;
+		cp.add(button, c);
 		button.addActionListener(new ButtonHandler(rp));
+	
 		
-		button = new JButton ("nep slider") ; 
-		c.gridx = 2;
-		c.gridy = 0;
-		c.gridwidth = 2;
-		rp.add(button, c);
+		button = new JButton (" ");
+		c.insets = new Insets (10, 0, 0, 0);
+		c.gridx = 0;
+		c.gridy = 12;
+		c.gridwidth =1;
+		button.setForeground(Color.MAGENTA);
+		button.setBackground(Color.magenta);
+		button.setPreferredSize(new Dimension(30,10));
+		op.add(button, c);
+		button.addActionListener(new ButtonHandler(op));
+		
+//		button = new JButton ("nep slider") ; 
+//		c.gridx = 2;
+//		c.gridy = 0;
+//		c.gridwidth = 2;
+//		cp.add(button, c);
 		
 //		button = new JButton ("nep1");
 //		c.gridx = 2;

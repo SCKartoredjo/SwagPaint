@@ -12,7 +12,7 @@ public abstract class MyShape {
 	protected boolean troo;
 	protected int width, height, startx, starty;
 	 Color color;
-	 
+	 RectPanel rp;
 	public MyShape() {
 		this(0, 0, 0, 0, 3, Color.black, true);
 	}
@@ -36,6 +36,7 @@ public abstract class MyShape {
 		g.setStroke(new BasicStroke(strokeWidth));
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
+	
 	}
 	
 	public void setCoords(int x1, int y1, int x2, int y2) {
@@ -80,5 +81,7 @@ public abstract class MyShape {
 	public boolean contains(int x, int y){
 		return false;
 	}
+
+
 
 }

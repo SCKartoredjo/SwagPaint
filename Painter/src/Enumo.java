@@ -1,13 +1,13 @@
 public class Enumo {
-	enum Keuze {square, ellipse, line, brush, delete, cleanAll, text} ;
+	enum Keuze {square, ellipse, line, brush, delete, cleanAll, text, eraser, drag, rainbow} ;
 	enum Kleur {black, white, red, green, blue, yellow, cyan, magenta, purple, grey, maroon, honeydew, royalblue, navy, orange, brown, pink};
 
 
 	
-	static Keuze keuze = Keuze.square;
+	static Keuze keuze = Keuze.brush;
 	static Kleur kleur = Kleur.black;
-	int x = 1;
-			
+	int x;
+	
 	public static void superenum (int x){	
 		
 		if (x == 1)
@@ -58,7 +58,12 @@ public class Enumo {
 			kleur = Kleur.pink;
 		if (x == 22)
 			keuze = Keuze.text;
-			
+		if (x == 23)
+			keuze = Keuze.eraser;
+		if (x == 24)
+			keuze = Keuze.drag;
+		if (x == 30)
+			keuze = Keuze.rainbow;
 
 		System.out.print("Keuze is: " + keuze + "\n");	
 	}
