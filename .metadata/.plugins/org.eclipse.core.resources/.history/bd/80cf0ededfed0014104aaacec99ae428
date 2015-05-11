@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class MyText {
+
+	char[] text = {};
+	int x = 0;
+	int y = 0;
+	int lengteChar = text.length;
+	Scanner cin = new Scanner(System.in);
+	
+	public MyText(int x, int y, char[] text){
+		this.x = x;
+		this.y = y ;
+		this.text = text;
+		changeText (text);
+	}
+	
+	public void changeText (char[] text){
+		System.out.println("lengteChar: " + lengteChar + " " +  "x=" + " " + x + "y=" + y);		
+	}
+	
+}

@@ -1,0 +1,94 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import java.awt.Color;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.lang.reflect.Field;
+public class ButtonPanel extends JPanel {
+	public ButtonPanel(RectPanel rp) {
+		super();
+		// Add a button to the panel. The argument to the JButton constructor
+		// will become the text on the button.
+		
+		rp.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+		JButton button;
+
+		button = new JButton ("Save");
+		c.fill=GridBagConstraints.BOTH;
+		c.gridx = 0;
+		c.gridy = 0;
+		rp.add(button, c);
+		button.addActionListener(new ButtonHandler(rp));
+		
+		JSlider stroke = new JSlider (0, 30) ;
+		c.fill=GridBagConstraints.BOTH;
+		c.gridx = 3;
+		c.gridy = 0;
+		rp.add(stroke);
+		stroke.addChangeListener(new SliderHandler(rp));		
+		
+		String[] buttonTexts = {"square", "ellipse", "line", "brush" ,"delete", "clean all"}; 
+		ButtonHandler bh = new ButtonHandler(rp);
+		for (int i = 0; i < buttonTexts.length; i++)
+		{
+			c.fill=GridBagConstraints.BOTH;
+			button = new JButton(buttonTexts[i]);    
+			c.gridx = 0;
+			c.gridy = 2+i;
+			rp.add(button, c);
+			button.addActionListener(bh);
+		}
+		
+		//Color Buttons
+		String[] colourButtons = {"black", "white", "red", "green", "blue", "yellow", "cyan", "magenta" }; 
+		
+		for (int i = 0; i < colourButtons.length; i++)
+		{
+			
+			Color colour;
+			try {
+			    Field field = Class.forName("java.awt.Color").getField(colourButtons[i]);
+			    colour = (Color)field.get(null);
+			} catch (Exception e) {
+			    colour = null; // Not defined
+			}
+			
+			int y = 0 ;
+			if (i > 6){
+				y = 1;
+				i = 0;
+			button = new JButton (colourButtons[i]);
+			c.fill=GridBagConstraints.BOTH;
+			c.gridx = 8+i;
+			c.gridy = y;
+			rp.add(button, c);
+			button.setBackground(colour);
+			button.setForeground(colour);
+			button.addActionListener(new ButtonHandler(rp));
+		}
+		
+		button = new JButton ("nofill");
+		c.fill=GridBagConstraints.BOTH;
+		c.gridx = 3;
+		c.gridy = 1;
+		rp.add(button, c);
+		button.addActionListener(new ButtonHandler(rp));
+		
+		button = new JButton ("filled");
+		c.fill=GridBagConstraints.BOTH;
+		c.gridx = 5;
+		c.gridy = 1;
+		rp.add(button, c);
+		button.addActionListener(new ButtonHandler(rp));
+
+	}
+
+}

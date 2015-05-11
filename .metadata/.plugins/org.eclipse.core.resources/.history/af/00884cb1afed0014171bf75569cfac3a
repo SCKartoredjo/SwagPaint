@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class MyText {
+
+	String text = "";
+	int x = 0;
+	int y = 0;
+	Scanner cin = new Scanner(System.in);
+	
+	public MyText(int x, int y, String text){
+		this.x = x;
+		this.y = y ;
+		this.text = text;
+		changeText (text);
+	}
+	
+	public void changeText (String text){
+		if (text == "Type Somthing end with NewLine"){
+			text = cin.nextLine();
+			System.out.println("fhdfhdjskfhjskd");
+		}
+		System.out.println("Text issss: " + text + " " +  "x=" + " " + x + "y=" + y);		
+	}
+	
+}

@@ -1,0 +1,152 @@
+import java.awt.MouseInfo;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.awt.Color;
+import javax.swing.JPanel;
+public class DrawingPanel extends JPanel implements MouseListener, MouseMotionListener {
+
+	Color purples = new Color(139, 0, 139);
+	Color oranges = new Color(255, 140, 0);
+	Color navys = new Color(0, 0, 128);
+	Color royalblue = new Color(65, 105, 225);
+	Color honeydew = new Color (240, 255, 240);
+	Color browns = new Color (139,69, 19);
+	Color maroons = new Color (128, 0, 0);
+	Color greys = new Color (128, 128, 128);
+	Color lpink = new Color (255, 204, 204);
+
+	
+	int x1, x2 , y1 , y2 ;
+	RectPanel rect ;
+	List<MyShape> shapeList;
+	
+	public DrawingPanel(RectPanel rp, List<MyShape> sl) {
+		this.rect = rp ;
+		this.shapeList = sl ;
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("Click");
+		String a = Enumo.keuze.name();
+		
+		if (a == "cleanAll"){
+			rect.deleteAll();
+		}
+				
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		String b;
+		b = "black";
+		
+		if (b == "black")
+			rect.color = Color.black;	
+		if (b == "white")
+			rect.color = Color.white;
+		if (b == "red")
+			rect.color = Color.red;	
+		if (b == "green")
+			rect.color = Color.green;	
+		if (b == "blue")
+			rect.color = Color.blue;
+		if (b == "yellow")
+			rect.color = Color.yellow;
+		if (b == "cyan")
+			rect.color = Color.CYAN;
+		if (b == "magenta")	
+			rect.color = Color.magenta;
+		if (b == "purple")
+			rect.color = purples;
+		if (b == "orange")
+			rect.color = oranges;
+		if (b == "navy")
+			rect.color = navys;
+		if (b == "royalblue")
+			rect.color = royalblue;
+		if (b == "honeydew")
+			rect.color = honeydew;
+		if (b == "brown")
+			rect.color = browns;
+		if (b == "maroon")
+			rect.color = maroons;
+		if (b == "grey")
+			rect.color = greys;
+		if (b == "pink")
+			rect.color = lpink;
+		else
+			rect.color = Color.BLACK;
+		}
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		// niet nodig
+		}
+
+	@Override
+	public void mousePressed(MouseEvent e) {		
+		String a;
+		a = Enumo.keuze.name();
+		
+		
+		this.x1 = e.getX();
+		this.y1 = e.getY();
+		
+			if (a == "square")
+				rect.addSquare(0,0,0,0);
+			if (a == "ellipse")
+				rect.addEllipse(0,0,0,0);
+			if (a == "line")
+				rect.addLine(0,0,0,0);
+			if (a == "delete")
+				rect.deleteShape(e.getX(), e.getY());
+			if (a == "text"){
+				char[] text = {};
+				rect.addText (e.getX(), e.getY(), text);
+			}
+		
+			
+			System.out.println ("Pressed");
+		}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println ("Release");
+	
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		// TODO Auto-generated method stub
+		this.x2 = e.getX();
+		this.y2 = e.getY();
+		
+		String a ;
+		a = Enumo.keuze.name();
+
+		if (a != "delete" && a != "brush" && a != "cleanAll")
+			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
+		if (a == "brush"){
+			rect.addEllipse(e.getX()+10,e.getY()+10, e.getX()-10,e.getY()-10);
+		}	
+		rect.repaint();
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}	
+	//preview: shape maken in mousePressed, mouseDragges coordinaten doorgeven en laatste uit array aanpassen (vergeet repaint niet :))
+	// delete: in myshape contains functie maken en vervolgens in iedere shape met super aanroepen, kijken of punten erin zitten
+	//         met break in for loop kun je er maar eentje pakken
+	// Geef sliderHandler de rp, zorg ervoor dat de waarde van de slider naar rp gaat en bij de add functies moet voor elk figuur de lijn dikte nog geïmplementeerd worden
+}
