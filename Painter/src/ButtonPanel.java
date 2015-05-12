@@ -7,6 +7,7 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.JTextField;
 
 public class ButtonPanel extends JPanel {
 	public ButtonPanel(RectPanel rp, OptionPanel op, ColorPanel cp) {
@@ -33,9 +34,6 @@ public class ButtonPanel extends JPanel {
 		c.fill=GridBagConstraints.BOTH;
 		//c.insets = new Insets(5,5,5,5);
 		//c.anchor = GridBagConstraints.PAGE_START;
-		
-	
-		
 		
 		String[] buttonTexts = {"drag","square", "ellipse", "line", "brush", "text","eraser","delete", "clean all"}; 
 		ButtonHandler bh = new ButtonHandler(op);
@@ -81,8 +79,6 @@ public class ButtonPanel extends JPanel {
 		}
 		
 		c. weightx = 0.0;
-		
-		
 
 		JSlider stroke = new JSlider (0, 30) ; 
 		c.gridx = 0;
@@ -112,13 +108,22 @@ public class ButtonPanel extends JPanel {
 		button = new JButton (" ");
 		c.insets = new Insets (10, 0, 0, 0);
 		c.gridx = 0;
-		c.gridy = 12;
+		c.gridy = 13;
 		c.gridwidth =1;
 		button.setForeground(Color.MAGENTA);
 		button.setBackground(Color.magenta);
 		button.setPreferredSize(new Dimension(30,10));
 		op.add(button, c);
 		button.addActionListener(new ButtonHandler(op));
+		
+		JTextField textBox = new JTextField("Type Here");
+		c.insets = new Insets (10, 0, 0, 0);
+		c.gridx = 0;
+		c.gridy = 12;
+		c.gridwidth = 1;
+		op.add(textBox);
+		textBox.addActionListener(new TextHandler(rp));
+		
 		
 //		button = new JButton ("nep slider") ; 
 //		c.gridx = 2;
