@@ -108,10 +108,11 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			if (a == "delete")
 				rect.deleteShape(e.getX(), e.getY());
 			if (a == "text"){
-				String text = "Type Hier";
+				String text = rect.myText;
 				rect.addText (e.getX(), e.getY(), text);
 			}
 			if( a == "drag"){
+<<<<<<< HEAD
 				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
 					//System.out.println("HALLO2");
 								
@@ -136,6 +137,11 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 								
 					}
 					
+=======
+				offSetX = e.getX();
+				offSetY = e.getY();
+				}
+>>>>>>> origin/master
 			}
 			System.out.println ("Pressed");
 		}
@@ -154,7 +160,11 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		String a ;
 		a = Enumo.keuze.name();
 
+<<<<<<< HEAD
 		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize"){
+=======
+		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "text"){
+>>>>>>> origin/master
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
 		}
 

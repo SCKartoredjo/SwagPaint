@@ -12,7 +12,8 @@ public class RectPanel extends JPanel {
 	int strokeWidth = 10;
 	List<MyShape> shapeList; 
 	boolean troo;
-	MyText myText ;
+	MyText MyText ;
+	String myText ;
 	
 	public RectPanel() {
 		super();
@@ -32,7 +33,8 @@ public class RectPanel extends JPanel {
         g2d.fillRect(0, 0, w, h);
 		for (MyShape s : shapeList)
 			s.draw(g2d); 
-		//g.drawString(myText.text, myText.x, myText.y); 
+		g2d.setPaint(Color.black);
+		g.drawString(myText, MyText.x, MyText.y); 
 		//g.drawString("abc", 500, 500);
 	}
 	
@@ -79,15 +81,12 @@ public class RectPanel extends JPanel {
 	}
 	
 	public void addText (int x1, int y1, String text){
-		MyText newText = new MyText(x1, y1, text);
-		myText = newText ;
+		this.MyText = new MyText(x1, y1, text);
 		this.repaint();
 	}
 	
 	public void deleteShape (int x1,int y1){
-		for (int t= shapeList.size()-1 ; t >= 0 ; t--){
-			//System.out.println("HALLO2");
-						
+		for (int t= shapeList.size()-1 ; t >= 0 ; t--){				
 			MyShape thisOne = shapeList.get(t);
 			
 			if (thisOne.contains(x1, y1)){

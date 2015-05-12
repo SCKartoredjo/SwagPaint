@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /ButtonHandler.class
 /ButtonPanel.class
 /ColorPanel.class
@@ -8,3 +9,6 @@
 /KeyHandler.class
 /Main$1.class
 /Main.class
+=======
+/TextHandler.class
+>>>>>>> origin/master

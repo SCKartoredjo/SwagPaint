@@ -8,7 +8,7 @@ public class MyText {
 	public MyText(int x, int y, String text){
 		this.text = text ;
 		this.x = x;
-		this.y = y ;
+		this.y = y;
 	}
 	
 }
