@@ -107,10 +107,11 @@ public class ButtonHandler implements ActionListener {
 			Enumo.superenum(23);
 		else if (ac.equals("drag"))
 			Enumo.superenum(24);
-		else if (ac.equals(" ")){
+		else if (ac.equals(" "))
 			Enumo.superenum(30);
-	
-		}
+		else if (ac.equals("resize"))
+			Enumo.superenum(31);
+		
 	}
 	
 }

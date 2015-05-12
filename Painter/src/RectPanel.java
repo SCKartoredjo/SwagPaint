@@ -99,23 +99,13 @@ public class RectPanel extends JPanel {
 		}
 	}
 	
-	public void dragShape (int xpos, int ypos, int x1, int y1, int x2, int y2){
-		for (int t= shapeList.size()-1 ; t >= 0 ; t--){
-			//System.out.println("HALLO2");
-						
-			MyShape thisOne = shapeList.get(t);			
-			if (thisOne.contains(xpos, ypos)){
-				System.out.println("Change!");
-				
-				thisOne.setX1( x2);
-				thisOne.setX2(x2 - thisOne.getX2());
-				thisOne.setY1(y2);
-				thisOne.setY2(y2 - thisOne.getY2() );
+	public void dragShape (int x1, int y1, int x2, int y2){
+	
 				
 				this.repaint();
 				
-			}
-		}
+	
+	
 	}
 			
 	public void deleteAll (){

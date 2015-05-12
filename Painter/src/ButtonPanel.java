@@ -37,15 +37,15 @@ public class ButtonPanel extends JPanel {
 	
 		
 		
-		String[] buttonTexts = {"drag","square", "ellipse", "line", "brush", "text","eraser","delete", "clean all"}; 
+		String[] buttonTexts = {"drag", "resize", "square", "ellipse", "line", "brush", "text","eraser","delete", "clean all"}; 
 		ButtonHandler bh = new ButtonHandler(op);
 		for (int i = 0; i < buttonTexts.length; i++)
 		{
 			button = new JButton(buttonTexts[i]);
 			c.insets = new Insets(0,10,0,10);
-			if (i == 0)
+			if (i == 1)
 				c.insets= new Insets(0,10,50,10);
-			if (i == 5)
+			if (i == 6)
 				c.insets = new Insets(50,10,0,10);
 			c.gridx = 0;
 			c.gridy = 2+i;

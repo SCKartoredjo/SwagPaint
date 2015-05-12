@@ -1,5 +1,5 @@
 public class Enumo {
-	enum Keuze {square, ellipse, line, brush, delete, cleanAll, text, eraser, drag, rainbow} ;
+	enum Keuze {square, ellipse, line, brush, delete, cleanAll, text, eraser, drag, rainbow, resize} ;
 	enum Kleur {black, white, red, green, blue, yellow, cyan, magenta, purple, grey, maroon, honeydew, royalblue, navy, orange, brown, pink};
 
 
@@ -64,6 +64,8 @@ public class Enumo {
 			keuze = Keuze.drag;
 		if (x == 30)
 			keuze = Keuze.rainbow;
+		if (x == 31)
+			keuze = Keuze.resize;
 
 		System.out.print("Keuze is: " + keuze + "\n");	
 	}
