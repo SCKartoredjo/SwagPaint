@@ -69,7 +69,6 @@ public class ButtonPanel extends JPanel {
 				c.gridx = 5+i;
 				c.gridy = 0;
 			}
-			
 			cp.add(button, c);
 			button.setBackground(buttonColors[i]);
 			button.setForeground(buttonColors[i]);
