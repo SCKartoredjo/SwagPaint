@@ -114,10 +114,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				rect.addText (e.getX(), e.getY(), text);
 			}
 			if( a == "drag"){
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
 					//System.out.println("HALLO2");
 								
@@ -125,17 +122,14 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					
 					if (thisOne.contains(x1, y1)){
 						shape = thisOne;
-<<<<<<< HEAD
 						shapeList.add( shape);
 						break ;}
 						
-			
-=======
-						break ;
+		
 					}
->>>>>>> origin/master
+
 				}
-			}
+			
 				if (a == "resize"){
 					for (int t= shapeList.size()-1 ; t >= 0 ; t--){
 						MyShape thisOne = shapeList.get(t);
@@ -148,19 +142,15 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 							break ;
 						}			
 					}
-<<<<<<< HEAD
+
 
 	
 				}
 
 			}
-		
-		
-=======
-				}
-			}
->>>>>>> origin/master
 
+	
+		
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
@@ -175,14 +165,10 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		String a ;
 		a = Enumo.keuze.name();
 
-<<<<<<< HEAD
+
 
 		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text"){
 
-
-=======
-		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text"){
->>>>>>> origin/master
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
 		}
 
