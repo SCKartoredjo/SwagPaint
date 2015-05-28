@@ -113,6 +113,8 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				String text = rect.myText;
 				rect.addText (e.getX(), e.getY(), text);
 			}
+			if (a == "eifel")
+				rect.addEifel(0,0,0,0);
 			if( a == "drag"){
 
 				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
@@ -124,10 +126,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 						shape = thisOne;
 						shapeList.add( shape);
 						break ;}
-						
-		
 					}
-
 				}
 			
 				if (a == "resize"){
@@ -143,12 +142,8 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 							offy = shoop.y2;
 							break ;
 						}			
-					}
-
-
-	
+					}	
 				}
-
 			}
 
 	
@@ -184,6 +179,10 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		
 		if (a == "eraser"){
 			rect.addErase(x2,y2,e.getX(), e.getY());
+		}
+		
+		if (a == "eifel"){
+			rect.addEifel(x1, y1, x2, y2);
 		}
 //		System.out.println ("Release");
 //		String a ;

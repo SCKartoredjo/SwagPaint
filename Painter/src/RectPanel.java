@@ -1,10 +1,15 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-
 
 public class RectPanel extends JPanel {
 	Graphics2D g2d;
@@ -14,6 +19,7 @@ public class RectPanel extends JPanel {
 	boolean troo;
 	MyText MyText ;
 	String myText ;
+	BufferedImage img = null;
 	
 	public RectPanel() {
 		super();
@@ -34,6 +40,7 @@ public class RectPanel extends JPanel {
 		for (MyShape s : shapeList)
 			s.draw(g2d); 
 		g2d.setPaint(Color.black);
+		g.drawImage(img, 50, 50, null);
 	//	g.drawString(myText, MyText.x, MyText.y); 
 		//g.drawString("abc", 500, 500);
 	}
@@ -99,12 +106,7 @@ public class RectPanel extends JPanel {
 	}
 	
 	public void dragShape (int x1, int y1, int x2, int y2){
-	
-				
-				this.repaint();
-				
-	
-	
+		this.repaint();	
 	}
 			
 	public void deleteAll (){
@@ -130,5 +132,15 @@ public class RectPanel extends JPanel {
 		this.repaint();	
 	}
 
-
+	public void addEifel(int x1, int y1, int x2, int y2){
+		//TODO: add Eifel
+		String lokatieS = "C:/Users/sckar_000/Documents/GitHub/SwagPaint/Painter/eiffel.png";
+		System.out.println("Does eiffel exists: " + new File(lokatieS).exists());
+		
+		try {
+			img = ImageIO.read(new File(lokatieS));
+		} catch (IOException e) {}
+		
+		this.repaint();
+	}
 }

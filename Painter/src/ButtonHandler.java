@@ -1,9 +1,5 @@
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
 
 public class ButtonHandler implements ActionListener {
 
@@ -25,10 +21,8 @@ public class ButtonHandler implements ActionListener {
 	// TODO: add code, here that will
 	// be ran when the button is clicked
 		String ac = e.getActionCommand();
-		
 		System.out.println("Dit is de ac: " + ac + " ");
 				
-		
 		if (ac.equals("square")){
 			//TODO add square
 			Enumo.superenum(1);	
@@ -111,7 +105,8 @@ public class ButtonHandler implements ActionListener {
 			Enumo.superenum(30);
 		else if (ac.equals("resize"))
 			Enumo.superenum(31);
-		
+		else if (ac.equals("Eifeltoren"))
+			Enumo.superenum(60);
 	}
 	
 }

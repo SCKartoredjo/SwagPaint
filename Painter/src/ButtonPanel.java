@@ -34,9 +34,6 @@ public class ButtonPanel extends JPanel {
 		//c.insets = new Insets(5,5,5,5);
 		//c.anchor = GridBagConstraints.PAGE_START;
 		
-	
-		
-		
 		String[] buttonTexts = {"drag", "resize", "square", "ellipse", "line", "brush", "text","eraser","delete", "clean all"}; 
 		ButtonHandler bh = new ButtonHandler(op);
 		for (int i = 0; i < buttonTexts.length; i++)
@@ -79,7 +76,6 @@ public class ButtonPanel extends JPanel {
 				c.gridx = 5+i;
 				c.gridy = 0;
 			}
-			
 			cp.add(button, c);
 			button.setBackground(buttonColors[i]);
 			button.setForeground(buttonColors[i]);
@@ -87,10 +83,16 @@ public class ButtonPanel extends JPanel {
 			button.addActionListener(new ButtonHandler(op));
 		}
 		
+		button = new JButton ("Eifeltoren");
+		c.insets = new Insets(10,10,0,0);
+		c.gridx = 14;
+		c.gridy = 0;
+		c.gridwidth = 2;
+		cp.add(button, c);
+		button.addActionListener(new ButtonHandler(rp));
+		
 		c. weightx = 0.0;
 		
-		
-
 		JSlider stroke = new JSlider (0, 30) ; 
 		c.gridx = 0;
 		c.gridy = 0;
@@ -100,6 +102,7 @@ public class ButtonPanel extends JPanel {
 		stroke.addChangeListener(new SliderHandler(rp));
 		
 		c.fill = GridBagConstraints.NONE;
+		c.insets = new Insets(0,0,10,0);
 		
 		button = new JButton ("nofill");
 		c.gridx = 0;
@@ -115,7 +118,6 @@ public class ButtonPanel extends JPanel {
 		cp.add(button, c);
 		button.addActionListener(new ButtonHandler(rp));
 	
-		
 		button = new JButton (" ");
 		c.insets = new Insets (10, 0, 0, 0);
 		c.gridx = 0;
