@@ -99,12 +99,7 @@ public class RectPanel extends JPanel {
 	}
 	
 	public void dragShape (int x1, int y1, int x2, int y2){
-	
-				
-				this.repaint();
-				
-	
-	
+		this.repaint();	
 	}
 			
 	public void deleteAll (){
