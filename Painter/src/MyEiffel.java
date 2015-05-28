@@ -40,7 +40,6 @@ public class MyEiffel extends MyShape {
 			if (my > y1 && my < y1+img.getHeight())
 				return true;
 		return false;
-
 	}
 }
 
