@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /ButtonHandler.class
 /ButtonPanel.class
 /ColorPanel.class
@@ -6,9 +5,12 @@
 /Enumo$Keuze.class
 /Enumo$Kleur.class
 /Enumo.class
-/KeyHandler.class
 /Main$1.class
 /Main.class
-=======
-/TextHandler.class
->>>>>>> origin/master
+/MyEllipse.class
+/MyLine.class
+/MyRectangle.class
+/MyShape.class
+/MyText.class
+/OptionPanel.class
+/RectPanel.class
