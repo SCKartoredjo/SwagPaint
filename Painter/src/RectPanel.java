@@ -34,7 +34,7 @@ public class RectPanel extends JPanel {
 		for (MyShape s : shapeList)
 			s.draw(g2d); 
 		g2d.setPaint(Color.black);
-		g.drawString(myText, MyText.x, MyText.y); 
+	//	g.drawString(myText, MyText.x, MyText.y); 
 		//g.drawString("abc", 500, 500);
 	}
 	

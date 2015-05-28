@@ -112,7 +112,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				rect.addText (e.getX(), e.getY(), text);
 			}
 			if( a == "drag"){
-<<<<<<< HEAD
+
 				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
 					//System.out.println("HALLO2");
 								
@@ -120,6 +120,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					
 					if (thisOne.contains(x1, y1)){
 						shape = thisOne;
+						shapeList.add( shape);
 						break ;}
 						
 			
@@ -131,20 +132,19 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					
 						if (thisOne.contains(x1, y1)){
 							shoop = thisOne;
+							shapeList.add(shoop);
 							offSetX = shoop.x1;
 							offSetY = shoop.y1;
 							break ;}
 								
 					}
-					
-=======
-				offSetX = e.getX();
-				offSetY = e.getY();
+
+	
 				}
->>>>>>> origin/master
+
 			}
-			System.out.println ("Pressed");
-		}
+		
+		
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
@@ -160,11 +160,10 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		String a ;
 		a = Enumo.keuze.name();
 
-<<<<<<< HEAD
-		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize"){
-=======
-		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "text"){
->>>>>>> origin/master
+
+		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text"){
+
+
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
 		}
 
@@ -188,14 +187,14 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			corx1 = e.getX() + shape.width/2;
 			cory1 = e.getY() + shape.height/2;
 			shape.setCoords(corx1, cory1, corx2, cory2);
-			shapeList.add( shape);
+			
 			repaint();
 		}
 		if (a == "resize"){
 			corx2 = e.getX();
 			cory2 = e.getY();
 			shoop.setCoords(offSetX, offSetY, corx2, cory2);
-			shapeList.add(shoop);
+			
 			repaint();
 		}
 		
