@@ -4,6 +4,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.List;
 import java.awt.Color;
+import java.awt.Image;
 
 import javax.swing.JPanel;
 public class DrawingPanel extends JPanel implements MouseListener, MouseMotionListener {
@@ -22,6 +23,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	int x1, x2 , y1 , y2 ;
 	RectPanel rect ;
 	List<MyShape> shapeList;
+	
 	int offSetX, offSetY, offx, offy;
 
 	public DrawingPanel(RectPanel rp, List<MyShape> sl) {
@@ -114,7 +116,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				rect.addText (e.getX(), e.getY(), text);
 			}
 			if (a == "eifel")
-				rect.addEifel(0,0,0,0);
+				rect.addEifel(0,e.getX(), e.getY(),0);
 			if( a == "drag"){
 
 				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
@@ -164,7 +166,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 
 
 
-		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text"){
+		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text" && a != "eifel"){
 
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
 		}
@@ -182,7 +184,10 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		}
 		
 		if (a == "eifel"){
-			rect.addEifel(x1, y1, x2, y2);
+			rect.x1 = e.getX();
+			rect.y1 = e.getY();
+			 rect.addEifel(x1, y1, x2, y2);
+			
 		}
 //		System.out.println ("Release");
 //		String a ;

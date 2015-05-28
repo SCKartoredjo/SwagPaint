@@ -68,6 +68,7 @@ public class Enumo {
 			keuze = Keuze.resize;
 		if (x == 60)
 			keuze = Keuze.eifel;
+		
 
 		System.out.print("Keuze is: " + keuze + "\n");	
 	}
