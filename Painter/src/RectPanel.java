@@ -5,8 +5,6 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,10 +19,12 @@ public class RectPanel extends JPanel {
 	boolean troo;
 	MyText MyText ;
 	String myText ;
+
 	MyShape shape;
 	int x1, y1;
 	List<Image> imgList;
 	BufferedImage img = null;
+
 	
 	public RectPanel() {
 		super();
@@ -47,6 +47,7 @@ public class RectPanel extends JPanel {
 		g2d.setPaint(Color.black);
 		g.drawImage(img, x1, y1, null);
 	//	g.drawString(myText, MyText.x, MyText.y); 
+
 		//g.drawString("abc", 500, 500);
 	}
 	
@@ -142,6 +143,7 @@ public class RectPanel extends JPanel {
 	}
 
 	public void addEifel(int x1, int y1, int x2, int y2){
+
 		//TODO: add Eifel
 		String lokatieS = "C:/Users/alysha/Documents/GitHub/SwagPaint/Painter/eiffel.png";
 		String lokatie = "/SwagPaint/Painter/src/eiffel.png";
@@ -151,6 +153,9 @@ public class RectPanel extends JPanel {
 			img = ImageIO.read(new File(lokatieS));
 		} catch (IOException e) {}
 		
+
+		MyShape newShape = new MyEiffel(x1, y1, x2, y2, strokeWidth, null, troo);
+		shapeList.add(newShape);
 		this.repaint();
 	}
 }
