@@ -22,7 +22,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	int x1, x2 , y1 , y2 ;
 	RectPanel rect ;
 	List<MyShape> shapeList;
-	int offSetX, offSetY;
+	int offSetX, offSetY, offx, offy;
 
 	public DrawingPanel(RectPanel rp, List<MyShape> sl) {
 		this.rect = rp ;
@@ -139,6 +139,8 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 							shapeList.add(shoop);
 							offSetX = shoop.x1;
 							offSetY = shoop.y1;
+							offx = shoop.x2;
+							offy = shoop.y2;
 							break ;
 						}			
 					}
@@ -191,10 +193,13 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			cory2 = e.getY() - shape.height/2;
 			corx1 = e.getX() + shape.width/2;
 			cory1 = e.getY() + shape.height/2;
-			shape.setCoords(corx1, cory1, corx2, cory2);
-			
+			if (shape.getClass().equals(MyLine.class))
+				shape.setCoords(offSetX +  e.getX() , offSetY + e.getY(), offx +  corx2, offy + cory2 );
+			else
+				shape.setCoords(corx1, cory1, corx2, cory2);
 			repaint();
-		}
+		
+			}
 		if (a == "resize"){
 			corx2 = e.getX();
 			cory2 = e.getY();

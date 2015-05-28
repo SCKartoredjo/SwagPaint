@@ -54,6 +54,13 @@ public class ButtonPanel extends JPanel {
 			button.addActionListener(bh);
 		}
 		
+		c.insets = new Insets(10,15,10,0);
+		button = new JButton("Color last");
+		c.gridx = 2;
+		c.gridy = 1;
+		cp.add(button, c);
+		button.addActionListener(new ButtonHandler(rp));
+
 		c.insets = new Insets(10,0,0,0);
 		
 		//Color Buttons
