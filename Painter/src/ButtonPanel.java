@@ -84,7 +84,7 @@ public class ButtonPanel extends JPanel {
 		}
 		
 		button = new JButton ("Eifeltoren");
-		c.insets = new Insets(10,10,0,0);
+		c.insets = new Insets(10,10,10,0);
 		c.gridx = 14;
 		c.gridy = 0;
 		c.gridwidth = 2;
