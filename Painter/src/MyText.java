@@ -1,10 +1,10 @@
+import java.awt.Font;
 import java.awt.Graphics2D;
-
 import java.awt.Color;
 
 public class MyText extends MyShape {
 
-	String text = "test";
+	String text = "Hello World";
 	
 	
 	public MyText() {
@@ -18,7 +18,9 @@ public class MyText extends MyShape {
 	
 	@Override
 	public void draw(Graphics2D g) {
-		System.out.println(text + " "+ x1 +  " " + y1);
+		//System.out.println(text + " "+ x1 +  " " + y1);
+		Font font = new Font("SANS_SERIF", Font.PLAIN, 24);
+        g.setFont(font);
 		g.setPaint(color);
 		g.drawString(text, x1, y1); 
 	}
@@ -27,7 +29,5 @@ public class MyText extends MyShape {
 	public boolean contains(int mx, int my){
 		return false;
 	}
-	
-	
 	
 }
