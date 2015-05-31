@@ -45,48 +45,6 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	}
 
 	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		String b;
-		b = Enumo.kleur.name();
-		if (b == "black")
-			rect.color = Color.black;	
-		if (b == "white")
-			rect.color = Color.white;
-		if (b == "red")
-			rect.color = Color.red;	
-		if (b == "green")
-			rect.color = Color.green;	
-		if (b == "blue")
-			rect.color = Color.blue;
-		if (b == "yellow")
-			rect.color = Color.yellow;
-		if (b == "cyan")
-			rect.color = Color.CYAN;
-		if (b == "magenta")	
-			rect.color = Color.magenta;
-		if (b == "purple")
-			rect.color = purples;
-		if (b == "orange")
-			rect.color = oranges;
-		if (b == "navy")
-			rect.color = navys;
-		if (b == "royalblue")
-			rect.color = royalblue;
-		if (b == "honeydew")
-			rect.color = honeydew;
-		if (b == "brown")
-			rect.color = browns;
-		if (b == "maroon")
-			rect.color = maroons;
-		if (b == "grey")
-			rect.color = greys;
-		if (b == "pink")
-			rect.color = lpink;
-	
-		}
-
-	@Override
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		// niet nodig
@@ -112,8 +70,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			if (a == "delete")
 				rect.deleteShape(e.getX(), e.getY());
 			if (a == "text"){
-				String text = rect.myText;
-				rect.addText (e.getX(), e.getY(), text);
+				rect.addText (e.getX(), e.getY());
 			}
 			if (a == "eifel")
 				rect.addEifel(e.getX(), e.getY(), x2, y2);
@@ -188,13 +145,9 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		if (a == "eifel"){
 			rect.x1 = e.getX();
 			rect.y1 = e.getY();
-			rect.addEifel(x1, y1, x2, y2);
-			
+			rect.addEifel(x1, y1, x2, y2);	
 		}
-
-//		System.out.println ("Release");
-//		String a ;
-//		a = Enumo.keuze.name();
+		
 		if (a == "drag"){
 			corx2 = e.getX() - shape.width/2;
 			cory2 = e.getY() - shape.height/2;
@@ -211,10 +164,8 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			corx2 = e.getX();
 			cory2 = e.getY();
 			shoop.setCoords(offSetX, offSetY, corx2, cory2);
-			
 			repaint();
 		}
-		
 		rect.repaint();
 	}
 
@@ -227,4 +178,48 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	// delete: in myshape contains functie maken en vervolgens in iedere shape met super aanroepen, kijken of punten erin zitten
 	//         met break in for loop kun je er maar eentje pakken
 	// Geef sliderHandler de rp, zorg ervoor dat de waarde van de slider naar rp gaat en bij de add functies moet voor elk figuur de lijn dikte nog geïmplementeerd worden
+	
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		String b;
+		b = Enumo.kleur.name();
+		if (b == "black")
+			rect.color = Color.black;	
+		if (b == "white")
+			rect.color = Color.white;
+		if (b == "red")
+			rect.color = Color.red;	
+		if (b == "green")
+			rect.color = Color.green;	
+		if (b == "blue")
+			rect.color = Color.blue;
+		if (b == "yellow")
+			rect.color = Color.yellow;
+		if (b == "cyan")
+			rect.color = Color.CYAN;
+		if (b == "magenta")	
+			rect.color = Color.magenta;
+		if (b == "purple")
+			rect.color = purples;
+		if (b == "orange")
+			rect.color = oranges;
+		if (b == "navy")
+			rect.color = navys;
+		if (b == "royalblue")
+			rect.color = royalblue;
+		if (b == "honeydew")
+			rect.color = honeydew;
+		if (b == "brown")
+			rect.color = browns;
+		if (b == "maroon")
+			rect.color = maroons;
+		if (b == "grey")
+			rect.color = greys;
+		if (b == "pink")
+			rect.color = lpink;
+		}
+
 }
+
+

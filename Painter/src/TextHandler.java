@@ -13,7 +13,6 @@ public class TextHandler implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		rect.myText = e.getActionCommand();
 		System.out.println ("TEXT:" + e.getActionCommand());
 	} 
 
