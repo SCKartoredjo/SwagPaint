@@ -61,57 +61,50 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		offSetX = e.getX();
 		offSetY = e.getY();
 		
-			if (a == "square")
-				rect.addSquare(0,0,0,0);
-			if (a == "ellipse")
-				rect.addEllipse(0,0,0,0);
-			if (a == "line")
-				rect.addLine(0,0,0,0);
-			if (a == "delete")
-				rect.deleteShape(e.getX(), e.getY());
-			if (a == "text"){
-				rect.addText (e.getX(), e.getY());
+		if (a == "square")
+			rect.addSquare(0,0,0,0);
+		if (a == "ellipse")
+			rect.addEllipse(0,0,0,0);
+		if (a == "line")
+			rect.addLine(0,0,0,0);
+		if (a == "delete")
+			rect.deleteShape(e.getX(), e.getY());
+		if (a == "text")
+			rect.addText (e.getX(), e.getY());
+		if (a == "eifel")
+			rect.addEifel(e.getX(), e.getY());
+		if( a == "drag"){
+			for (int t= shapeList.size()-1 ; t >= 0 ; t--){
+				MyShape thisOne = shapeList.get(t);
+				if (thisOne.contains(x1, y1)){
+					shape = thisOne;
+					shapeList.add(shape);
+					break ;}
 			}
-			if (a == "eifel")
-				rect.addEifel(e.getX(), e.getY());
-
-			if( a == "drag"){
-
-				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
-					//System.out.println("HALLO2");
-								
-					MyShape thisOne = shapeList.get(t);
-					
-					if (thisOne.contains(x1, y1)){
-						shape = thisOne;
-						shapeList.add( shape);
-						break ;}
-					}
-				}
+		}
+		
+		if (a == "resize"){
+			for (int t= shapeList.size()-1 ; t >= 0 ; t--){
+				MyShape thisOne = shapeList.get(t);
 			
-				if (a == "resize"){
-					for (int t= shapeList.size()-1 ; t >= 0 ; t--){
-						MyShape thisOne = shapeList.get(t);
-					
-						if (thisOne.contains(x1, y1)){
-							shoop = thisOne;
-							shapeList.add(shoop);
-							offSetX = shoop.x1;
-							offSetY = shoop.y1;
-							offx = shoop.x2;
-							offy = shoop.y2;
-							break ;
-						}			
-					}	
-				}
-			}
+				if (thisOne.contains(x1, y1)){
+					shoop = thisOne;
+					shapeList.add(shoop);
+					offSetX = shoop.x1;
+					offSetY = shoop.y1;
+					offx = shoop.x2;
+					offy = shoop.y2;
+					break ;
+				}			
+			}	
+		}
+	}
 
 	
 		
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
@@ -122,29 +115,16 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		String a ;
 		a = Enumo.keuze.name();
 
-
-
-		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text" && a != "eifel"){
-
+		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text" && a != "eifel")
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
-		}
-
-		if (a == "brush"){
+		if (a == "brush")
 	        rect.addLine(x2, y2, e.getX(), e.getY());   
-		}	
-
-		if (a == "rainbow"){
+		if (a == "rainbow")
 	        rect.rainbowLine(x2, y2, e.getX(), e.getY());
-		}	
-		
-		if (a == "eraser"){
+		if (a == "eraser")
 			rect.addErase(x2,y2,e.getX(), e.getY());
-		}
-
-		
-		if (a == "eifel"){
-			rect.addEifel(x1, y1);	
-		}
+		if (a == "eifel")
+			rect.addEifel(x1, y1);
 		
 		if (a == "drag"){
 			corx2 = e.getX() - shape.width/2;
@@ -156,8 +136,8 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			else
 				shape.setCoords(corx1, cory1, corx2, cory2);
 			repaint();
-		
 			}
+		
 		if (a == "resize"){
 			corx2 = e.getX();
 			cory2 = e.getY();
@@ -217,7 +197,4 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		if (b == "pink")
 			rect.color = lpink;
 		}
-
 }
-
-
