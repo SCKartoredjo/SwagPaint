@@ -27,6 +27,9 @@ public class MyText extends MyShape {
 
 	@Override
 	public boolean contains(int mx, int my){
+		if (mx > x1 && mx < x1+(text.length()*12))
+			if (my < y1 && my > y1-24)
+				return true;
 		return false;
 	}
 	
