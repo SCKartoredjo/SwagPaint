@@ -6,7 +6,6 @@ public class MyText extends MyShape {
 
 	String text = "Hello World";
 	
-	
 	public MyText() {
 		super();
 	}

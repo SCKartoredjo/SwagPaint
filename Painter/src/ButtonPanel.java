@@ -129,17 +129,6 @@ public class ButtonPanel extends JPanel {
 		op.add(button, c);
 		button.addActionListener(new ButtonHandler(op));
 		
-//		button = new JButton ("nep slider") ; 
-//		c.gridx = 2;
-//		c.gridy = 0;
-//		c.gridwidth = 2;
-//		cp.add(button, c);
-		
-//		button = new JButton ("nep1");
-//		c.gridx = 2;
-//		c.gridy = 0;
-//		rp.add(button, c);
-
 	}
 
 }

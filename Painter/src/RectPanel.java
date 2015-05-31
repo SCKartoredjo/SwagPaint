@@ -138,8 +138,8 @@ public class RectPanel extends JPanel {
 		this.repaint();	
 	}
 
-	public void addEifel(int x1, int y1, int x2, int y2){
-		MyShape newShape = new MyEiffel(x1, y1, x2, y2, strokeWidth, null, troo);
+	public void addEifel(int x1, int y1){
+		MyShape newShape = new MyEiffel(x1, y1, 0, 0, strokeWidth, null, troo);
 		shapeList.add(newShape);
 		this.repaint();
 	}

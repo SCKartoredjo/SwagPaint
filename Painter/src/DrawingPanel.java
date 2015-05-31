@@ -73,7 +73,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				rect.addText (e.getX(), e.getY());
 			}
 			if (a == "eifel")
-				rect.addEifel(e.getX(), e.getY(), x2, y2);
+				rect.addEifel(e.getX(), e.getY());
 
 			if( a == "drag"){
 
@@ -143,9 +143,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 
 		
 		if (a == "eifel"){
-			rect.x1 = e.getX();
-			rect.y1 = e.getY();
-			rect.addEifel(x1, y1, x2, y2);	
+			rect.addEifel(x1, y1);	
 		}
 		
 		if (a == "drag"){
