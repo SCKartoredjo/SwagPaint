@@ -115,10 +115,13 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			for (int t= shapeList.size()-1 ; t >= 0 ; t--){
 				MyShape thisOne = shapeList.get(t);
 				if (thisOne.contains(x1, y1) && thisOne.getShape() == "text"){
+					MyText holder = (MyText)thisOne;
+					String text = rect.changeText();
+					holder.changeText(text);
+					//System.out.println("found TEXT");
 					//Change Text
-					thisOne.setColor(Color.BLUE);
-					shapeList.add(thisOne);
-					System.out.println("found TEXT");
+					//thisOne.setColor(Color.BLUE);
+					//shapeList.add(thisOne);
 					break ;}		
 			}	
 			rect.addText (e.getX(), e.getY());
@@ -133,22 +136,15 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					shapeList.add(shape);
 					break ;}
 			}
-		
-
 			if( a == "drag"){
-
 				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
-					//System.out.println("HALLO2");
-								
 					MyShape thisOne = shapeList.get(t);
-					
 					if (thisOne.contains(x1, y1)){
 						shape = thisOne;
 						shapeList.add( shape);
 						break ;}
-					}
 				}
-
+			}
 		}
 		
 		if (a == "resize"){
@@ -191,9 +187,6 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	        rect.rainbowLine(x2, y2, e.getX(), e.getY());
 		if (a == "eraser")
 			rect.addErase(x2,y2,e.getX(), e.getY());
-
-		
-
 		if (a == "eifel")
 			rect.addEifel(x1, y1);
 		if (a == "drag"){

@@ -74,9 +74,13 @@ public class RectPanel extends JPanel {
 	}
 	
 	public void addText (int x1, int y1){
-		MyShape thisText = new MyText(x1, y1, 0, 0, strokeWidth, color, troo);;
+		MyShape thisText = new MyText(x1, y1, 0, 0, strokeWidth, color, troo);
 		shapeList.add(thisText);
 		this.repaint();
+	}
+	
+	public String changeText() {
+		return "lol";
 	}
 	
 	int i = 0;
@@ -136,4 +140,5 @@ public class RectPanel extends JPanel {
 		shapeList.add(newShape);
 		this.repaint();
 	}
+
 }

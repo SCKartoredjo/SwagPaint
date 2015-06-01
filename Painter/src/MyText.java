@@ -38,7 +38,7 @@ public class MyText extends MyShape {
 		return shape;
 	}
 	
-	public void changeText(){
-		this.text = "new";
+	public void changeText(String text){
+		this.text = text;
 	}
 }
