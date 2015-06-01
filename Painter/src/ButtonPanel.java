@@ -55,10 +55,9 @@ public class ButtonPanel extends JPanel {
 		}
 		
 		JTextField textBox = new JTextField("HIT ENTER!");
-		c.insets = new Insets(10,10,20,10);
+		c.insets = new Insets(0,10,40,10);
 		c.gridx = 0;
 		c.gridy = 9;
-		textBox.setPreferredSize(new Dimension(80,20));
 		op.add(textBox,c);
 	    textBox.addActionListener(new TextHandler(rp));
 	    

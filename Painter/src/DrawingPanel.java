@@ -82,6 +82,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			kleur = greys;
 		if (b == "pink")
 			kleur = lpink;
+		rect.color = kleur;
 		}
 
 	@Override
