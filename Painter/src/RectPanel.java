@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.imageio.ImageIO;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class RectPanel extends JPanel {
@@ -17,6 +18,7 @@ public class RectPanel extends JPanel {
 	int strokeWidth = 10;
 	List<MyShape> shapeList; 
 	boolean troo;
+	String myText = "yolo";
 
 	MyShape shape;
 	int x1, y1;
@@ -80,7 +82,13 @@ public class RectPanel extends JPanel {
 	}
 	
 	public String changeText() {
-		return "lol";
+		JFrame frame = new JFrame();
+		frame.pack();
+		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setSize(400, 200);
+		frame.setLocation(500, 200);
+		return this.myText;
 	}
 	
 	int i = 0;

@@ -7,6 +7,7 @@ import java.awt.Insets;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
+import javax.swing.JTextField;
 
 public class ButtonPanel extends JPanel {
 	public ButtonPanel(RectPanel rp, OptionPanel op, ColorPanel cp) {
@@ -129,6 +130,5 @@ public class ButtonPanel extends JPanel {
 		button.setPreferredSize(new Dimension(30,10));
 		op.add(button, c);
 		button.addActionListener(new ButtonHandler(op));
-
 	}
 }

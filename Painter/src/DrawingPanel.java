@@ -118,11 +118,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					MyText holder = (MyText)thisOne;
 					String text = rect.changeText();
 					holder.changeText(text);
-					//System.out.println("found TEXT");
-					//Change Text
-					//thisOne.setColor(Color.BLUE);
-					//shapeList.add(thisOne);
-					break ;}		
+					break ;}	
 			}	
 			rect.addText (e.getX(), e.getY());
 		}
