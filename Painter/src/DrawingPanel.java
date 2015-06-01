@@ -1,9 +1,9 @@
 
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.List;
-import java.awt.Color;
 
 import javax.swing.JPanel;
 public class DrawingPanel extends JPanel implements MouseListener, MouseMotionListener {
@@ -17,12 +17,12 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	Color maroons = new Color (128, 0, 0);
 	Color greys = new Color (128, 128, 128);
 	Color lpink = new Color (255, 204, 204);
-	MyShape shape, shoop;
+	MyShape shape, shoop, sheep;
 	int corx1, cory1, corx2, cory2;
 	int x1, x2 , y1 , y2 ;
 	RectPanel rect ;
 	List<MyShape> shapeList;
-	Color kleur;
+	Color kleur = Color.BLUE;
 	
 	int offSetX, offSetY, offx, offy;
 
@@ -131,23 +131,10 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				if (thisOne.contains(x1, y1)){
 					shape = thisOne;
 					shapeList.add(shape);
+					repaint();
 					break ;}
 			}
 		
-
-			if( a == "drag"){
-
-				for (int t= shapeList.size()-1 ; t >= 0 ; t--){
-					//System.out.println("HALLO2");
-								
-					MyShape thisOne = shapeList.get(t);
-					
-					if (thisOne.contains(x1, y1)){
-						shape = thisOne;
-						shapeList.add( shape);
-						break ;}
-					}
-				}
 
 		}
 		
@@ -161,9 +148,22 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					offSetY = shoop.y1;
 					offx = shoop.x2;
 					offy = shoop.y2;
+					repaint();
 					break ;
 				}			
 			}	
+		}
+		if (a == "colorc"){
+			for (int t= shapeList.size()-1 ; t >= 0 ; t--){
+				System.out.println("Change!");
+				MyShape thisOne = shapeList.get(t);
+				if (thisOne.contains(x1, y1)){
+					thisOne.setColor(kleur);
+					shapeList.add(thisOne);
+					
+					repaint();
+					break ;}
+			}
 		}
 	}
 
@@ -183,7 +183,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		a = Enumo.keuze.name();
 
 
-		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text" && a != "eifel")
+		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text" && a != "eifel" && a != "colorc")
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
 		if (a == "brush")
 	        rect.addLine(x2, y2, e.getX(), e.getY());   

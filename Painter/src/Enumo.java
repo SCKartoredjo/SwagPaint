@@ -1,5 +1,5 @@
 public class Enumo {
-	enum Keuze {square, ellipse, line, brush, delete, cleanAll, text, eraser, drag, rainbow, resize, eifel} ;
+	enum Keuze {square, ellipse, line, brush, delete, cleanAll, text, eraser, drag, rainbow, resize, eifel,colorc} ;
 	enum Kleur {black, white, red, green, blue, yellow, cyan, magenta, purple, grey, maroon, honeydew, royalblue, navy, orange, brown, pink};
 
 
@@ -68,6 +68,8 @@ public class Enumo {
 			keuze = Keuze.resize;
 		if (x == 60)
 			keuze = Keuze.eifel;
+		if (x == 50)
+			keuze = Keuze.colorc;
 
 		
 
