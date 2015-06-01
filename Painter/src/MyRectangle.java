@@ -42,5 +42,4 @@ public class MyRectangle extends MyShape {
 		return shape;
 	}
 
-
 }
