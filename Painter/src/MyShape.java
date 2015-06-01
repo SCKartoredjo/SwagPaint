@@ -82,6 +82,13 @@ public abstract class MyShape {
 		return false;
 	}
 
-
+	public String getShape(){
+		String shape = "shape";
+		return shape;
+	}
+	
+	public void setColor (Color color){
+		this.color = color;
+	}
 
 }

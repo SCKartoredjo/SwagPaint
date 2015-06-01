@@ -4,7 +4,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.List;
 import java.awt.Color;
-import java.awt.Image;
 
 import javax.swing.JPanel;
 public class DrawingPanel extends JPanel implements MouseListener, MouseMotionListener {
@@ -37,11 +36,9 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		System.out.println("Click");
 		String a;
 		a = Enumo.keuze.name();
-		
 		if (a == "cleanAll"){
 			rect.deleteAll();
 		}
-	
 	}
 
 	@Override
@@ -69,8 +66,18 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			rect.addLine(0,0,0,0);
 		if (a == "delete")
 			rect.deleteShape(e.getX(), e.getY());
-		if (a == "text")
+		if (a == "text"){
+			for (int t= shapeList.size()-1 ; t >= 0 ; t--){
+				MyShape thisOne = shapeList.get(t);
+				if (thisOne.contains(x1, y1) && thisOne.getShape() == "text"){
+					//Change Text
+					thisOne.setColor(Color.BLUE);
+					shapeList.add(thisOne);
+					System.out.println("found TEXT");
+					break ;}		
+			}	
 			rect.addText (e.getX(), e.getY());
+		}
 		if (a == "eifel")
 			rect.addEifel(e.getX(), e.getY());
 		if( a == "drag"){

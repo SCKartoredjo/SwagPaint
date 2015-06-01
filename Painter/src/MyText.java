@@ -32,4 +32,13 @@ public class MyText extends MyShape {
 		return false;
 	}
 	
+	@Override
+	public String getShape(){
+		String shape = "text";
+		return shape;
+	}
+	
+	public void changeText(){
+		this.text = "new";
+	}
 }

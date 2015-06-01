@@ -33,4 +33,10 @@ public class MyLine extends MyShape {
 	public boolean contains(int mx, int my){
 		return 10 >= line.ptLineDist(mx, my);
 	}
+	
+	@Override
+	public String getShape(){
+		String shape = "line";
+		return shape;
+	}
 }

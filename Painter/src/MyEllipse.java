@@ -35,5 +35,11 @@ public class MyEllipse extends MyShape {
 	public boolean contains(int x, int y){
 		return ellipse.contains(x, y);
 	}
+	
+	@Override
+	public String getShape(){
+		String shape = "ellipse";
+		return shape;
+	}
 
 }

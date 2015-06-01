@@ -2,7 +2,9 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
+
 import com.sun.prism.paint.Color;
 
 
@@ -40,6 +42,12 @@ public class MyEiffel extends MyShape {
 			if (my > y1 && my < y1+img.getHeight())
 				return true;
 		return false;
+	}
+	
+	@Override
+	public String getShape(){
+		String shape = "eiffel";
+		return shape;
 	}
 }
 

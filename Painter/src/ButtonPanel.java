@@ -18,7 +18,6 @@ public class ButtonPanel extends JPanel {
 		Color orange = new Color(255, 140, 0);
 		Color navy = new Color(0, 0, 128);
 		Color royalblue = new Color(65, 105, 225);
-		//Color honeydew = new Color (240, 255, 240);
 		Color brown = new Color (139,69, 19);
 		Color maroon = new Color (128, 0, 0);
 		Color grey = new Color (128, 128, 128);
@@ -128,6 +127,5 @@ public class ButtonPanel extends JPanel {
 		button.setPreferredSize(new Dimension(30,10));
 		op.add(button, c);
 		button.addActionListener(new ButtonHandler(op));
-		
 	}
 }
