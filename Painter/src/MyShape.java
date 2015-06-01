@@ -11,8 +11,8 @@ public abstract class MyShape {
 	Shape shape;
 	protected boolean troo;
 	protected int width, height, startx, starty;
-	 Color color;
-	 RectPanel rp;
+	Color color;
+	RectPanel rp;
 	public MyShape() {
 		this(0, 0, 0, 0, 3, Color.black, true);
 	}

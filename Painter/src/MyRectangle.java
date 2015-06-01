@@ -35,6 +35,7 @@ public class MyRectangle extends MyShape {
 		return x >= startx && x <= startx+width && y >= starty && y <= starty+height;
 	}
 	
+
 	@Override
 	public String getShape(){
 		String shape = "rectangle";
