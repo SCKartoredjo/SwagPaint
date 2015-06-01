@@ -156,7 +156,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				System.out.println("Change!");
 				MyShape thisOne = shapeList.get(t);
 				if (thisOne.contains(x1, y1)){
-					thisOne.setColor(Color.BLUE);
+					thisOne.setColor(kleur);
 					shapeList.add(thisOne);
 					
 					repaint();
