@@ -54,6 +54,13 @@ public class ButtonPanel extends JPanel {
 			button.addActionListener(bh);
 		}
 		
+		JTextField textBox = new JTextField("HIT ENTER!");
+		c.insets = new Insets(10,10,20,10);
+		c.gridx = 0;
+		c.gridy = 8;
+		op.add(textBox,c);
+	    textBox.addActionListener(new TextHandler(rp));
+	    
 		c.insets = new Insets(10,15,10,0);
 		button = new JButton("bucket");
 		c.gridx = 2;

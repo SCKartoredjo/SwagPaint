@@ -161,9 +161,9 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				if (thisOne.contains(x1, y1)){
 					thisOne.setColor(kleur);
 					shapeList.add(thisOne);
-					
 					break ;}
 			}
+		
 		}
 		rect.repaint();
 	}

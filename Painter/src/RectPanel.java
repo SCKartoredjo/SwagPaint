@@ -116,9 +116,6 @@ public class RectPanel extends JPanel {
 		}
 	}
 	
-	public void dragShape (int x1, int y1, int x2, int y2){
-		this.repaint();	
-	}
 			
 	public void deleteAll (){
 		for (int t= shapeList.size()-1 ; t >= 0 ; t--){
