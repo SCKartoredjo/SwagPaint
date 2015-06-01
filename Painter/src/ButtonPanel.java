@@ -34,7 +34,7 @@ public class ButtonPanel extends JPanel {
 		//c.insets = new Insets(5,5,5,5);
 		//c.anchor = GridBagConstraints.PAGE_START;
 		
-		String[] buttonTexts = {"drag", "resize", "square", "ellipse", "line", "brush", "text","eraser","delete", "clean all"}; 
+		String[] buttonTexts = {"drag", "resize", "square", "ellipse", "line", "brush", "text", "eraser","delete", "clean all"}; 
 		ButtonHandler bh = new ButtonHandler(op);
 		for (int i = 0; i < buttonTexts.length; i++)
 		{
@@ -48,6 +48,7 @@ public class ButtonPanel extends JPanel {
 			if (i == 1)
 				c.insets= new Insets(0,10,50,10);
 			if (i == 7){
+				c.ipady = 20;
 				c.insets = new Insets(50,10,0,10);
 			}
 			op.add(button, c);
@@ -57,9 +58,11 @@ public class ButtonPanel extends JPanel {
 		JTextField textBox = new JTextField("HIT ENTER!");
 		c.insets = new Insets(10,10,20,10);
 		c.gridx = 0;
-		c.gridy = 8;
+		c.gridy = 9;
+		textBox.setPreferredSize(new Dimension(80,20));
 		op.add(textBox,c);
 	    textBox.addActionListener(new TextHandler(rp));
+	    
 	    
 		c.insets = new Insets(10,15,10,0);
 		button = new JButton("bucket");
