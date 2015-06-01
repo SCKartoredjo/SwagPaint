@@ -138,5 +138,6 @@ public class ButtonPanel extends JPanel {
 		button.setPreferredSize(new Dimension(30,10));
 		op.add(button, c);
 		button.addActionListener(new ButtonHandler(op));
+		
 	}
 }
