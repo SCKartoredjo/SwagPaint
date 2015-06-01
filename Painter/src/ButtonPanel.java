@@ -40,14 +40,17 @@ public class ButtonPanel extends JPanel {
 		{
 			button = new JButton(buttonTexts[i]);
 			c.insets = new Insets(0,10,0,10);
-			if (i == 1)
-				c.insets= new Insets(0,10,50,10);
-			if (i == 6)
-				c.insets = new Insets(50,10,0,10);
 			c.gridx = 0;
 			c.gridy = 2+i;
 			c.ipady = 20 ;
+<<<<<<< HEAD
 			button.setPreferredSize(new Dimension(80,20));
+=======
+			if (i == 1)
+				c.insets= new Insets(0,10,50,10);
+			if (i == 7)
+				c.insets = new Insets(50,10,0,10);
+>>>>>>> origin/master
 			op.add(button, c);
 			button.addActionListener(bh);
 		}
@@ -129,6 +132,9 @@ public class ButtonPanel extends JPanel {
 		button.setPreferredSize(new Dimension(30,10));
 		op.add(button, c);
 		button.addActionListener(new ButtonHandler(op));
+<<<<<<< HEAD
+=======
+		
+>>>>>>> origin/master
 	}
-
 }

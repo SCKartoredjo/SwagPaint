@@ -17,8 +17,6 @@ public class RectPanel extends JPanel {
 	int strokeWidth = 10;
 	List<MyShape> shapeList; 
 	boolean troo;
-	MyText MyText ;
-	String myText ;
 
 	MyShape shape;
 	int x1, y1;
@@ -46,8 +44,12 @@ public class RectPanel extends JPanel {
 			s.draw(g2d); 
 		g2d.setPaint(Color.black);
 		
+<<<<<<< HEAD
 	//	g.drawString(myText, MyText.x, MyText.y); 
 
+=======
+		//g.drawImage(img, x1, y1, null);
+>>>>>>> origin/master
 		//g.drawString("abc", 500, 500);
 	}
 	
@@ -79,6 +81,12 @@ public class RectPanel extends JPanel {
 		shapeList.add(newShape);
 	}
 	
+	public void addText (int x1, int y1){
+		MyShape thisText = new MyText(x1, y1, 0, 0, strokeWidth, color, troo);;
+		shapeList.add(thisText);
+		this.repaint();
+	}
+	
 	int i = 0;
 	Color [] regenboog = {Color.red,Color.red, Color.red,  Color.ORANGE,Color.ORANGE,Color.ORANGE, Color.YELLOW, Color.YELLOW,Color.YELLOW, Color.green,Color.green,Color.green, Color.BLUE, Color.BLUE,Color.BLUE,Color.magenta,Color.magenta,Color.magenta };
 	public void rainbowLine(int x1, int y1, int x2, int y2){
@@ -91,11 +99,6 @@ public class RectPanel extends JPanel {
 		newShape = new MyLine(x1, y1, x2, y2, strokeWidth+10, kleur, troo);
 		this.repaint();
 		shapeList.add(newShape);
-	}
-	
-	public void addText (int x1, int y1, String text){
-		this.MyText = new MyText(x1, y1, text);
-		this.repaint();
 	}
 	
 	public void deleteShape (int x1,int y1){
@@ -117,8 +120,6 @@ public class RectPanel extends JPanel {
 			
 	public void deleteAll (){
 		for (int t= shapeList.size()-1 ; t >= 0 ; t--){
-				//System.out.println("HALLO2");			
-	
 			shapeList.get(t).setCoords(10000, 10000, 10000, 10000);
 			this.repaint();
 			}
@@ -138,19 +139,8 @@ public class RectPanel extends JPanel {
 		this.repaint();	
 	}
 
-	public void addEifel(int x1, int y1, int x2, int y2){
-
-		//TODO: add Eifel
-		String lokatieS = "C:/Users/alysha/Documents/GitHub/SwagPaint/Painter/eiffel.png";
-		String lokatie = "/SwagPaint/Painter/src/eiffel.png";
-		System.out.println("Does eiffel exists: " + new File(lokatie).exists());
-		
-		try {
-			img = ImageIO.read(new File(lokatieS));
-		} catch (IOException e) {}
-		
-
-		MyShape newShape = new MyEiffel(x1, y1, x2, y2, strokeWidth, null, troo);
+	public void addEifel(int x1, int y1){
+		MyShape newShape = new MyEiffel(x1, y1, 0, 0, strokeWidth, null, troo);
 		shapeList.add(newShape);
 		this.repaint();
 	}

@@ -5,8 +5,10 @@
 /Enumo$Keuze.class
 /Enumo$Kleur.class
 /Enumo.class
+/KeyHandler.class
 /Main$1.class
 /Main.class
+/MyEiffel.class
 /MyEllipse.class
 /MyLine.class
 /MyRectangle.class
@@ -14,11 +16,6 @@
 /MyText.class
 /OptionPanel.class
 /RectPanel.class
-<<<<<<< HEAD
-/KeyHandler.class
-=======
+/SliderHandler.class
 /TextHandler.class
->>>>>>> origin/master
-/eiffel.png
-/Copy of eiffel.png
-/MyEiffel.class
+/Window.class
