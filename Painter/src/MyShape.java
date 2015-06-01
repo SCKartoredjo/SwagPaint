@@ -82,8 +82,6 @@ public abstract class MyShape {
 		return false;
 	}
 	
-
-
 	public String getShape(){
 		String shape = "shape";
 		return shape;

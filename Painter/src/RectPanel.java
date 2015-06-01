@@ -3,15 +3,9 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.imageio.ImageIO;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class RectPanel extends JPanel {
 	Graphics2D g2d;
@@ -83,15 +77,6 @@ public class RectPanel extends JPanel {
 	}
 	
 	public String changeText() {
-//		JFrame frame = new JFrame();
-//		JTextField textBox = new JTextField("Type Here");
-//		frame.pack();
-//		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-//		frame.setVisible(true);
-//		frame.setSize(400, 200);
-//		frame.setLocation(500, 200);
-//		frame.add(textBox);
-//		textBox.addActionListener();
 		return this.myText;
 	}
 	

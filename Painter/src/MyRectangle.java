@@ -5,7 +5,7 @@ import java.awt.geom.Rectangle2D;
 
 public class MyRectangle extends MyShape {
 
-	
+
 	int strokeWidth;
 
 	public MyRectangle() {
@@ -14,7 +14,6 @@ public class MyRectangle extends MyShape {
 
 	public MyRectangle(int x1, int y1, int x2, int y2, int strokeWidth, Color color, boolean troo){
 		super(x1, y1, x2, y2, strokeWidth, color, troo);
-		
 		this.troo = troo;	
 		this.strokeWidth = strokeWidth;
 	}
@@ -35,7 +34,6 @@ public class MyRectangle extends MyShape {
 		return x >= startx && x <= startx+width && y >= starty && y <= starty+height;
 	}
 	
-
 	@Override
 	public String getShape(){
 		String shape = "rectangle";

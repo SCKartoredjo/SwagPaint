@@ -6,6 +6,7 @@ import java.awt.geom.Line2D;
 public class MyLine extends MyShape {
 
 	
+
 	Line2D.Double line;
 	int strokeWidth ;
 	
