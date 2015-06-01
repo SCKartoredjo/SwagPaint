@@ -47,12 +47,20 @@ public class ButtonPanel extends JPanel {
 
 			if (i == 1)
 				c.insets= new Insets(0,10,50,10);
-			if (i == 7)
+			if (i == 7){
 				c.insets = new Insets(50,10,0,10);
+			}
 			op.add(button, c);
 			button.addActionListener(bh);
 		}
 		
+		JTextField textBox = new JTextField("HIT ENTER!");
+		c.insets = new Insets(10,10,20,10);
+		c.gridx = 0;
+		c.gridy = 8;
+		op.add(textBox,c);
+	    textBox.addActionListener(new TextHandler(rp));
+	    
 		c.insets = new Insets(10,15,10,0);
 		button = new JButton("bucket");
 		c.gridx = 2;
