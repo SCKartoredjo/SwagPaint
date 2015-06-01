@@ -23,6 +23,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	int x1, x2 , y1 , y2 ;
 	RectPanel rect ;
 	List<MyShape> shapeList;
+	Color kleur;
 	
 	int offSetX, offSetY, offx, offy;
 
@@ -50,40 +51,40 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		String b;
 		b = Enumo.kleur.name();
 		if (b == "black")
-			rect.color = Color.black;	
+			kleur = Color.black;	
 		if (b == "white")
-			rect.color = Color.white;
+			kleur = Color.white;
 		if (b == "red")
-			rect.color = Color.red;	
+			kleur = Color.red;	
 		if (b == "green")
-			rect.color = Color.green;	
+			kleur = Color.green;	
 		if (b == "blue")
-			rect.color = Color.blue;
+			kleur = Color.blue;
 		if (b == "yellow")
-			rect.color = Color.yellow;
+			kleur = Color.yellow;
 		if (b == "cyan")
-			rect.color = Color.CYAN;
+			kleur = Color.CYAN;
 		if (b == "magenta")	
-			rect.color = Color.magenta;
+			kleur = Color.magenta;
 		if (b == "purple")
-			rect.color = purples;
+			kleur = purples;
 		if (b == "orange")
-			rect.color = oranges;
+			kleur = oranges;
 		if (b == "navy")
-			rect.color = navys;
+			kleur = navys;
 		if (b == "royalblue")
-			rect.color = royalblue;
+			kleur = royalblue;
 		if (b == "honeydew")
-			rect.color = honeydew;
+			kleur = honeydew;
 		if (b == "brown")
-			rect.color = browns;
+			kleur = browns;
 		if (b == "maroon")
-			rect.color = maroons;
+			kleur = maroons;
 		if (b == "grey")
-			rect.color = greys;
+			kleur = greys;
 		if (b == "pink")
-			rect.color = lpink;
-	
+			kleur = lpink;
+	rect.color = kleur;
 		}
 
 	@Override
@@ -117,6 +118,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			}
 			if (a == "eifel")
 				rect.addEifel(e.getX(), e.getY(), x2, y2);
+
 
 			if( a == "drag"){
 
@@ -167,7 +169,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 
 
 
-		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text" && a != "eifel"){
+		if (a != "delete" && a != "brush" && a != "cleanAll" && a != "eraser" && a != "drag" && a != "rainbow" && a != "resize" && a != "text" && a != "eifel" ){
 
 			shapeList.get(shapeList.size()-1).setCoords(x1, y1, x2, y2);
 		}
@@ -184,13 +186,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			rect.addErase(x2,y2,e.getX(), e.getY());
 		}
 
-		
-		if (a == "eifel"){
-			rect.x1 = e.getX();
-			rect.y1 = e.getY();
-			rect.addEifel(x1, y1, x2, y2);
-			
-		}
+
 
 //		System.out.println ("Release");
 //		String a ;

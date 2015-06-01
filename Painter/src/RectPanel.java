@@ -45,7 +45,7 @@ public class RectPanel extends JPanel {
 		for (MyShape s : shapeList)
 			s.draw(g2d); 
 		g2d.setPaint(Color.black);
-		g.drawImage(img, x1, y1, null);
+		
 	//	g.drawString(myText, MyText.x, MyText.y); 
 
 		//g.drawString("abc", 500, 500);
@@ -131,11 +131,7 @@ public class RectPanel extends JPanel {
 		if (x == 2)
 			troo = false;
 	}
-	public void changecolor (Color color){
-		shape = shapeList.get(shapeList.size()-1);
-		shape.color = color;
-		this.repaint();
-	}
+
 	public void fakeShape(int x1, int y1, int x2, int y2){
 		MyShape fakeShape = new MyRectangle(x1, y1, x2, y2, strokeWidth, color, troo);
 		shapeList.add(fakeShape);

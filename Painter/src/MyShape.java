@@ -81,6 +81,8 @@ public abstract class MyShape {
 	public boolean contains(int x, int y){
 		return false;
 	}
+	
+
 
 
 

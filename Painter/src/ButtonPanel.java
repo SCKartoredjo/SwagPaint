@@ -47,12 +47,13 @@ public class ButtonPanel extends JPanel {
 			c.gridx = 0;
 			c.gridy = 2+i;
 			c.ipady = 20 ;
+			button.setPreferredSize(new Dimension(80,20));
 			op.add(button, c);
 			button.addActionListener(bh);
 		}
 		
 		c.insets = new Insets(10,15,10,0);
-		button = new JButton("Color last");
+		button = new JButton("bucket");
 		c.gridx = 2;
 		c.gridy = 1;
 		cp.add(button, c);
@@ -128,18 +129,6 @@ public class ButtonPanel extends JPanel {
 		button.setPreferredSize(new Dimension(30,10));
 		op.add(button, c);
 		button.addActionListener(new ButtonHandler(op));
-		
-//		button = new JButton ("nep slider") ; 
-//		c.gridx = 2;
-//		c.gridy = 0;
-//		c.gridwidth = 2;
-//		cp.add(button, c);
-		
-//		button = new JButton ("nep1");
-//		c.gridx = 2;
-//		c.gridy = 0;
-//		rp.add(button, c);
-
 	}
 
 }

@@ -34,5 +34,6 @@ public class MyRectangle extends MyShape {
 	public boolean contains(int x, int y){
 		return x >= startx && x <= startx+width && y >= starty && y <= starty+height;
 	}
-
+	
+	
 }
