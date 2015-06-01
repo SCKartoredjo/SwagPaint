@@ -85,7 +85,6 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		}
 
 	@Override
-
 	public void mouseExited(MouseEvent arg0) {
 		// TODO Auto-generated method stub
 		// niet nodig

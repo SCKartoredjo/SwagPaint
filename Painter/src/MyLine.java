@@ -5,7 +5,7 @@ import java.awt.geom.Line2D;
 
 public class MyLine extends MyShape {
 
-	Color color;
+	//Color color;
 	Line2D.Double line;
 	int strokeWidth ;
 	
@@ -15,7 +15,7 @@ public class MyLine extends MyShape {
 
 	public MyLine(int x1, int y1, int x2, int y2,  int strokeWidth, Color color, boolean troo) {
 		super(x1, y1, x2, y2, strokeWidth, color, troo);
-		this.color = color;
+		//this.color = color;
 		this.troo = troo;
 		this.strokeWidth = strokeWidth ;
 

@@ -47,9 +47,8 @@ public class ButtonPanel extends JPanel {
 
 			if (i == 1)
 				c.insets= new Insets(0,10,50,10);
-			if (i == 7){
+			if (i == 7)
 				c.insets = new Insets(50,10,0,10);
-			}
 			op.add(button, c);
 			button.addActionListener(bh);
 		}

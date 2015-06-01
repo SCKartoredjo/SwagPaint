@@ -77,15 +77,6 @@ public class RectPanel extends JPanel {
 	}
 	
 	public String changeText() {
-//		JFrame frame = new JFrame();
-//		JTextField textBox = new JTextField("Type Here");
-//		frame.pack();
-//		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
-//		frame.setVisible(true);
-//		frame.setSize(400, 200);
-//		frame.setLocation(500, 200);
-//		frame.add(textBox);
-//		textBox.addActionListener();
 		return this.myText;
 	}
 	
