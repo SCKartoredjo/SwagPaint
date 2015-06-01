@@ -82,8 +82,6 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			kleur = greys;
 		if (b == "pink")
 			kleur = lpink;
-	rect.color = kleur;
-	sheep.color = kleur;
 		}
 
 	@Override
@@ -120,8 +118,12 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					String text = rect.changeText();
 					holder.changeText(text);
 					break ;}	
+				if (t <= 0)
+					rect.addText (e.getX(), e.getY());
 			}	
-			rect.addText (e.getX(), e.getY());
+			if(shapeList.size() <= 0 )
+				rect.addText (e.getX(), e.getY());
+			
 		}
 		if (a == "eifel")
 			rect.addEifel(e.getX(), e.getY());
