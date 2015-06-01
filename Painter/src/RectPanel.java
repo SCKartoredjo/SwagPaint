@@ -43,14 +43,6 @@ public class RectPanel extends JPanel {
 		for (MyShape s : shapeList)
 			s.draw(g2d); 
 		g2d.setPaint(Color.black);
-		
-<<<<<<< HEAD
-	//	g.drawString(myText, MyText.x, MyText.y); 
-
-=======
-		//g.drawImage(img, x1, y1, null);
->>>>>>> origin/master
-		//g.drawString("abc", 500, 500);
 	}
 	
 	public void addSquare(int x1, int y1, int x2, int y2){
