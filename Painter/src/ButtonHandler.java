@@ -107,8 +107,6 @@ public class ButtonHandler implements ActionListener {
 			Enumo.superenum(31);
 		else if (ac.equals("Eifeltoren"))
 			Enumo.superenum(60);
-		else if (ac.equals("Color last"))
-			rectp.changecolor(rectp.color);
 	}
 	
 }
