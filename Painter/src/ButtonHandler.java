@@ -108,7 +108,7 @@ public class ButtonHandler implements ActionListener {
 		else if (ac.equals("Eifeltoren"))
 			Enumo.superenum(60);
 		else if (ac.equals("bucket"))
-			Enumo.superenum(50);
+			Enumo.superenum(52);
 	}
 	
 }

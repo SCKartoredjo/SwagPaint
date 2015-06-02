@@ -68,7 +68,7 @@ public class Enumo {
 			keuze = Keuze.resize;
 		if (x == 60)
 			keuze = Keuze.eifel;
-		if (x == 50)
+		if (x == 52)
 			keuze = Keuze.colorc;
 
 		

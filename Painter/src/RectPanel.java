@@ -13,7 +13,7 @@ public class RectPanel extends JPanel {
 	int strokeWidth = 10;
 	List<MyShape> shapeList; 
 	boolean troo;
-	String myText = "yolo";
+	String myText = "HIT ENTER!";
 
 	MyShape shape;
 	int x1, y1;
