@@ -65,11 +65,11 @@ public class ButtonHandler implements ActionListener {
 		else if (ac.equals("magenta")){
 			Enumo.superenum(12);
 		}
-		else if (ac.equals("filled")){
-			rectp.changebool(1);
+		else if (ac.equals("filling")){
+			Enumo.superenum(70);
 		}
-		else if (ac.equals("nofill")){
-			rectp.changebool(2);
+		else if (ac.equals("outline")){
+			Enumo.superenum(71);
 		}
 		else if (ac.equals("brush")){
 			Enumo.superenum(50);
@@ -108,7 +108,7 @@ public class ButtonHandler implements ActionListener {
 		else if (ac.equals("Eifeltoren"))
 			Enumo.superenum(60);
 		else if (ac.equals("bucket"))
-			Enumo.superenum(50);
+			Enumo.superenum(52);
 	}
 	
 }

@@ -14,8 +14,8 @@ public class MyLine extends MyShape {
 		super();
 	}
 
-	public MyLine(int x1, int y1, int x2, int y2,  int strokeWidth, Color color, boolean troo) {
-		super(x1, y1, x2, y2, strokeWidth, color, troo);
+	public MyLine(int x1, int y1, int x2, int y2,  int strokeWidth, Color color, Color color2, boolean troo) {
+		super(x1, y1, x2, y2, strokeWidth, color, color2, troo);
 
 		this.troo = troo;
 		this.strokeWidth = strokeWidth ;

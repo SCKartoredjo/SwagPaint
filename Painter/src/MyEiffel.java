@@ -17,8 +17,8 @@ public class MyEiffel extends MyShape {
 		super();
 	}
 	
-	public MyEiffel(int x1, int y1, int x2, int y2, int strokeWidth, Color color, boolean troo) {
-		super(x1, y1, x2, y2, strokeWidth, null, troo);
+	public MyEiffel(int x1, int y1, int x2, int y2, int strokeWidth, Color color, Color color2, boolean troo) {
+		super(x1, y1, x2, y2, strokeWidth, null, null, troo);
 	}
 
 	@Override
@@ -27,7 +27,7 @@ public class MyEiffel extends MyShape {
 		String lokatie = "/SwagPaint/Painter/src/eiffel.png";
 		String lokatieA = "C:/Users/alysha/Documents/GitHub/SwagPaint/Painter/eiffel.png";
 		String LokatieS = "C:/Users/sckar_000/Documents/GitHub/SwagPaint/Painter/src/eiffel.png";
-		System.out.println("Does eiffel exists: " + new File(LokatieS).exists());
+		//System.out.println("Does eiffel exists: " + new File(LokatieS).exists());
 		
 		try {
 			img = ImageIO.read(new File(LokatieS));
@@ -40,8 +40,8 @@ public class MyEiffel extends MyShape {
 
 	@Override
 	public boolean contains(int mx, int my){
-		if (mx > x1 && mx < x1+img.getWidth())
-			if (my > y1 && my < y1+img.getHeight())
+		if (mx > x1-img.getWidth()/2 && mx < x1+img.getWidth()/2)
+			if (my > y1-img.getHeight()/2 && my < y1+img.getHeight()/2)
 				return true;
 		return false;
 	}

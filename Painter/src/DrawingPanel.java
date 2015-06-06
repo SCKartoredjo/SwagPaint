@@ -23,6 +23,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	RectPanel rect ;
 	List<MyShape> shapeList;
 	Color kleur = Color.BLUE;
+	Color kleur2 = Color.blue;
 	
 	int offSetX, offSetY, offx, offy;
 
@@ -46,44 +47,84 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		String b;
-		b = Enumo.kleur.name();
-		if (b == "black")
-			kleur = Color.black;	
-		if (b == "white")
-			kleur = Color.white;
-		if (b == "red")
-			kleur = Color.red;	
-		if (b == "green")
-			kleur = Color.green;	
-		if (b == "blue")
-			kleur = Color.blue;
-		if (b == "yellow")
-			kleur = Color.yellow;
-		if (b == "cyan")
-			kleur = Color.CYAN;
-		if (b == "magenta")	
-			kleur = Color.magenta;
-		if (b == "purple")
-			kleur = purples;
-		if (b == "orange")
-			kleur = oranges;
-		if (b == "navy")
-			kleur = navys;
-		if (b == "royalblue")
-			kleur = royalblue;
-		if (b == "honeydew")
-			kleur = honeydew;
-		if (b == "brown")
-			kleur = browns;
-		if (b == "maroon")
-			kleur = maroons;
-		if (b == "grey")
-			kleur = greys;
-		if (b == "pink")
-			kleur = lpink;
-		rect.color = kleur;
+		String c = Enumo.shapeColors.name();
+		String b = Enumo.kleur.name();
+		if (c == "fill"){
+			if (b == "black")
+				kleur = Color.black;	
+			if (b == "white")
+				kleur = Color.white;
+			if (b == "red")
+				kleur = Color.red;	
+			if (b == "green")
+				kleur = Color.green;	
+			if (b == "blue")
+				kleur = Color.blue;
+			if (b == "yellow")
+				kleur = Color.yellow;
+			if (b == "cyan")
+				kleur = Color.CYAN;
+			if (b == "magenta")	
+				kleur = Color.magenta;
+			if (b == "purple")
+				kleur = purples;
+			if (b == "orange")
+				kleur = oranges;
+			if (b == "navy")
+				kleur = navys;
+			if (b == "royalblue")
+				kleur = royalblue;
+			if (b == "honeydew")
+				kleur = honeydew;
+			if (b == "brown")
+				kleur = browns;
+			if (b == "maroon")
+				kleur = maroons;
+			if (b == "grey")
+				kleur = greys;
+			if (b == "pink")
+				kleur = lpink;
+			rect.color = kleur;
 		}
+		
+		if (c == "nofill"){
+			if (b == "black")
+				kleur = Color.black;	
+			if (b == "white")
+				kleur = Color.white;
+			if (b == "red")
+				kleur = Color.red;	
+			if (b == "green")
+				kleur = Color.green;	
+			if (b == "blue")
+				kleur = Color.blue;
+			if (b == "yellow")
+				kleur = Color.yellow;
+			if (b == "cyan")
+				kleur = Color.CYAN;
+			if (b == "magenta")	
+				kleur = Color.magenta;
+			if (b == "purple")
+				kleur = purples;
+			if (b == "orange")
+				kleur = oranges;
+			if (b == "navy")
+				kleur = navys;
+			if (b == "royalblue")
+				kleur = royalblue;
+			if (b == "honeydew")
+				kleur = honeydew;
+			if (b == "brown")
+				kleur = browns;
+			if (b == "maroon")
+				kleur = maroons;
+			if (b == "grey")
+				kleur = greys;
+			if (b == "pink")
+				kleur2 = lpink;
+			rect.color2 = kleur;
+		}
+	}
 
 	@Override
 	public void mouseExited(MouseEvent arg0) {
@@ -200,7 +241,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			corx1 = e.getX() + shape.width/2;
 			cory1 = e.getY() + shape.height/2;
 			if (shape.getClass().equals(MyLine.class))
-				shape.setCoords(offSetX +  e.getX() , offSetY + e.getY(), offx +  corx2, offy + cory2 );
+				shape.setCoords(offSetX +  e.getX() , offSetY + e.getY(), offx, offy + cory2 );
 			else
 				shape.setCoords(corx1, cory1, corx2, cory2);
 			repaint();

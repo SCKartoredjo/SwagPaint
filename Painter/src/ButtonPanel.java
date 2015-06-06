@@ -115,14 +115,14 @@ public class ButtonPanel extends JPanel {
 		c.fill = GridBagConstraints.NONE;
 		c.insets = new Insets(0,0,10,0);
 		
-		button = new JButton ("nofill");
+		button = new JButton ("outline");
 		c.gridx = 0;
 		c.gridy = 1;
 		c.gridwidth = 2;
 		cp.add(button, c);
 		button.addActionListener(new ButtonHandler(rp));
 
-		button = new JButton ("filled");
+		button = new JButton ("filling");
 		c.gridx = 3;
 		c.gridy = 1;
 		c.gridwidth =2;

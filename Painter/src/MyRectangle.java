@@ -10,8 +10,8 @@ public class MyRectangle extends MyShape {
 		super();
 	}
 
-	public MyRectangle(int x1, int y1, int x2, int y2, int strokeWidth, Color color, boolean troo){
-		super(x1, y1, x2, y2, strokeWidth, color, troo);
+	public MyRectangle(int x1, int y1, int x2, int y2, int strokeWidth, Color color, Color color2, boolean troo){
+		super(x1, y1, x2, y2, strokeWidth, color, color2, troo);
 		this.troo = troo;	
 		this.strokeWidth = strokeWidth;
 	}
@@ -19,13 +19,12 @@ public class MyRectangle extends MyShape {
 	@Override
 	public void draw(Graphics2D g) {
 		super.draw(g);
-		Rectangle2D.Double rect = new Rectangle2D.Double(startx, starty, width,height);
-		g.setPaint(color);
-		g.setStroke(new BasicStroke(strokeWidth));
-		if (troo)
-			g.fill(rect);
 		
-		g.draw(rect);
+		g.setColor(color);
+		g.fillRect(startx, starty, width, height); //to fill a certain rect with the selected color.
+			g.setColor(color2);
+		g.drawRect(startx,starty,width,height);//this will draw your border. 
+
 	}
 	@Override
 	public boolean contains(int x, int y){

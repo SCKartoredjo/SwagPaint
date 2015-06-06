@@ -10,10 +10,11 @@ import javax.swing.JPanel;
 public class RectPanel extends JPanel {
 	Graphics2D g2d;
 	Color color;
+	Color color2;
 	int strokeWidth = 10;
 	List<MyShape> shapeList; 
 	boolean troo;
-	String myText = "yolo";
+	String myText = "HIT ENTER!";
 
 	MyShape shape;
 	int x1, y1;
@@ -44,34 +45,34 @@ public class RectPanel extends JPanel {
 	
 	public void addSquare(int x1, int y1, int x2, int y2){
 		MyShape newShape ;
-		newShape = new MyRectangle(x1, y1, x2, y2, strokeWidth, color, troo);
+		newShape = new MyRectangle(x1, y1, x2, y2, strokeWidth, color, color2, troo);
 		this.repaint();
 		shapeList.add(newShape);
 	}
 	
 	public void addEllipse(int x1, int y1, int x2, int y2){
 		MyShape newShape ;
-		newShape = new MyEllipse(x1, y1, x2, y2, strokeWidth, color, troo);
+		newShape = new MyEllipse(x1, y1, x2, y2, strokeWidth, color, color2, troo);
 		this.repaint();
 		shapeList.add(newShape);
 	}
 	
 	public void addLine(int x1, int y1, int x2, int y2){
 		MyShape newShape ;
-		newShape = new MyLine(x1, y1, x2, y2, strokeWidth, color, troo);
+		newShape = new MyLine(x1, y1, x2, y2, strokeWidth, color, color2, troo);
 		this.repaint();
 		shapeList.add(newShape);
 	}
 	
 	public void addErase(int x1, int y1, int x2, int y2){
 		MyShape newShape ;
-		newShape = new MyLine(x1, y1, x2, y2, strokeWidth, Color.WHITE, troo);
+		newShape = new MyLine(x1, y1, x2, y2, strokeWidth, Color.WHITE, Color.WHITE, troo);
 		this.repaint();
 		shapeList.add(newShape);
 	}
 	
 	public void addText (int x1, int y1){
-		MyShape thisText = new MyText(x1, y1, 0, 0, strokeWidth, color, troo);
+		MyShape thisText = new MyText(x1, y1, 0, 0, strokeWidth, color, color, troo);
 		shapeList.add(thisText);
 		this.repaint();
 	}
@@ -89,7 +90,7 @@ public class RectPanel extends JPanel {
 		i = i+1;
 		if (i == regenboog.length)
 			i = 0;
-		newShape = new MyLine(x1, y1, x2, y2, strokeWidth+10, kleur, troo);
+		newShape = new MyLine(x1, y1, x2, y2, strokeWidth+10, kleur, kleur, troo);
 		this.repaint();
 		shapeList.add(newShape);
 	}
@@ -124,13 +125,13 @@ public class RectPanel extends JPanel {
 	}
 
 	public void fakeShape(int x1, int y1, int x2, int y2){
-		MyShape fakeShape = new MyRectangle(x1, y1, x2, y2, strokeWidth, color, troo);
+		MyShape fakeShape = new MyRectangle(x1, y1, x2, y2, strokeWidth, color, color, troo);
 		shapeList.add(fakeShape);
 		this.repaint();	
 	}
 
 	public void addEifel(int x1, int y1){
-		MyShape newShape = new MyEiffel(x1, y1, 0, 0, strokeWidth, null, troo);
+		MyShape newShape = new MyEiffel(x1, y1, 0, 0, strokeWidth, null, null, troo);
 		shapeList.add(newShape);
 		this.repaint();
 	}

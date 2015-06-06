@@ -12,18 +12,20 @@ public abstract class MyShape {
 	protected boolean troo;
 	protected int width, height, startx, starty;
 	Color color;
+	Color color2;
 	RectPanel rp;
 	public MyShape() {
-		this(0, 0, 0, 0, 3, Color.black, true);
+		this(0, 0, 0, 0, 3, Color.black, Color.BLACK, true);
 	}
 
-	public MyShape(int x1, int y1, int x2, int y2, int strokeWidth, Color color, boolean troo) {
+	public MyShape(int x1, int y1, int x2, int y2, int strokeWidth, Color color, Color color2, boolean troo) {
 		this.x1 = x1;
 		this.x2 = x2;
 		this.y1 = y1;
 		this.y2 = y2;
 		this.strokeWidth = strokeWidth;
 		this.color = color;
+		this.color2 = color2;
 		this.troo = troo;
 		
 	}

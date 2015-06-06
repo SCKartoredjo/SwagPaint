@@ -1,11 +1,12 @@
 public class Enumo {
 	enum Keuze {square, ellipse, line, brush, delete, cleanAll, text, eraser, drag, rainbow, resize, eifel,colorc} ;
 	enum Kleur {black, white, red, green, blue, yellow, cyan, magenta, purple, grey, maroon, honeydew, royalblue, navy, orange, brown, pink};
-
+	enum ShapeColors {fill, nofill};
 
 	
 	static Keuze keuze = Keuze.brush;
 	static Kleur kleur = Kleur.black;
+	static ShapeColors shapeColors = ShapeColors.fill;
 	int x;
 	
 	public static void superenum (int x){	
@@ -68,8 +69,12 @@ public class Enumo {
 			keuze = Keuze.resize;
 		if (x == 60)
 			keuze = Keuze.eifel;
-		if (x == 50)
+		if (x == 52)
 			keuze = Keuze.colorc;
+		if (x == 70)
+			shapeColors = ShapeColors.fill;
+		if (x == 71)
+			shapeColors = ShapeColors.nofill;
 
 		
 

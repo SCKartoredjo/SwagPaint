@@ -10,8 +10,8 @@ public class MyText extends MyShape {
 		super();
 	}
 	
-	public MyText(int x1, int y1, int x2, int y2, int strokeWidth, Color color, boolean troo) {
-		super(x1, y1, x2, y2, strokeWidth, color, troo);
+	public MyText(int x1, int y1, int x2, int y2, int strokeWidth, Color color, Color color2, boolean troo) {
+		super(x1, y1, x2, y2, strokeWidth, color, color, troo);
 		this.color = color;
 	}
 	
