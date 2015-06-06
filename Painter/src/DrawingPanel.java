@@ -174,6 +174,10 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					MyShape thisOne = shapeList.get(t);
 					if (thisOne.contains(x1, y1)){
 						shape = thisOne;
+						offSetX = shape.x1;
+						offSetY = shape.y1;
+						offx = shape.x2;
+						offy = shape.y2;
 						shapeList.add( shape);
 						break ;}
 				}
@@ -240,8 +244,10 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 			cory2 = e.getY() - shape.height/2;
 			corx1 = e.getX() + shape.width/2;
 			cory1 = e.getY() + shape.height/2;
+
 			if (shape.getClass().equals(MyLine.class))
 				shape.setCoords(offSetX +  e.getX() , offSetY + e.getY(), offx, offy + cory2 );
+
 			else
 				shape.setCoords(corx1, cory1, corx2, cory2);
 			repaint();
