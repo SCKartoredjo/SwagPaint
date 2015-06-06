@@ -23,7 +23,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 	RectPanel rect ;
 	List<MyShape> shapeList;
 	Color kleur = Color.BLUE;
-	Color kleur2 = Color.blue;
+	Color kleur2 = Color.BLUE;
 	
 	int offSetX, offSetY, offx, offy;
 
@@ -89,40 +89,40 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 		
 		if (c == "nofill"){
 			if (b == "black")
-				kleur = Color.black;	
+				kleur2 = Color.black;	
 			if (b == "white")
-				kleur = Color.white;
+				kleur2 = Color.white;
 			if (b == "red")
-				kleur = Color.red;	
+				kleur2 = Color.red;	
 			if (b == "green")
-				kleur = Color.green;	
+				kleur2 = Color.green;	
 			if (b == "blue")
-				kleur = Color.blue;
+				kleur2 = Color.blue;
 			if (b == "yellow")
-				kleur = Color.yellow;
+				kleur2 = Color.yellow;
 			if (b == "cyan")
-				kleur = Color.CYAN;
+				kleur2 = Color.CYAN;
 			if (b == "magenta")	
-				kleur = Color.magenta;
+				kleur2 = Color.magenta;
 			if (b == "purple")
-				kleur = purples;
+				kleur2 = purples;
 			if (b == "orange")
-				kleur = oranges;
+				kleur2 = oranges;
 			if (b == "navy")
-				kleur = navys;
+				kleur2 = navys;
 			if (b == "royalblue")
-				kleur = royalblue;
+				kleur2 = royalblue;
 			if (b == "honeydew")
-				kleur = honeydew;
+				kleur2 = honeydew;
 			if (b == "brown")
-				kleur = browns;
+				kleur2 = browns;
 			if (b == "maroon")
-				kleur = maroons;
+				kleur2 = maroons;
 			if (b == "grey")
-				kleur = greys;
+				kleur2 = greys;
 			if (b == "pink")
 				kleur2 = lpink;
-			rect.color2 = kleur;
+			rect.color2 = kleur2;
 		}
 	}
 
@@ -205,6 +205,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 				MyShape thisOne = shapeList.get(t);
 				if (thisOne.contains(x1, y1)){
 					thisOne.setColor(kleur);
+					thisOne.setColor2(kleur2);
 					shapeList.add(thisOne);
 					break ;}
 			}
@@ -247,9 +248,9 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 
 			if (shape.getClass().equals(MyLine.class))
 				shape.setCoords(offSetX +  e.getX() , offSetY + e.getY(), offx, offy + cory2 );
-
-			else
+			else{
 				shape.setCoords(corx1, cory1, corx2, cory2);
+			}
 			repaint();
 			}
 		

@@ -92,5 +92,9 @@ public abstract class MyShape {
 	public void setColor (Color color){
 		this.color = color;
 	}
+	
+	public void setColor2 (Color color2){
+		this.color2 = color2;
+	}
 
 }
