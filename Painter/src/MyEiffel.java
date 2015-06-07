@@ -26,11 +26,11 @@ public class MyEiffel extends MyShape {
 		//String lokatieS = "C:/Users/sckar_000/Documents/GitHub/SwagPaint/Painter/eiffel.png";
 		String lokatie = "/SwagPaint/Painter/src/eiffel.png";
 		String lokatieA = "C:/Users/alysha/Documents/GitHub/SwagPaint/Painter/eiffel.png";
-		String LokatieS = "C:/Users/sckar_000/Documents/GitHub/SwagPaint/Painter/src/eiffel.png";
+		String lokatieS = "C:/Users/sckar_000/Documents/GitHub/SwagPaint/Painter/src/eiffel.png";
 		//System.out.println("Does eiffel exists: " + new File(LokatieS).exists());
 		
 		try {
-			img = ImageIO.read(new File(LokatieS));
+			img = ImageIO.read(new File(lokatieS));
 		} catch (IOException e) {}
 		
 		g.drawImage(img, x1-img.getWidth()/2, y1-img.getHeight()/2, null);

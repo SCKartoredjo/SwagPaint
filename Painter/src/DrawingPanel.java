@@ -180,6 +180,7 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 						offy = shape.y2;
 						shapeList.add( shape);
 						break ;}
+					else shape = null;
 				}
 			}
 		
@@ -195,8 +196,8 @@ public class DrawingPanel extends JPanel implements MouseListener, MouseMotionLi
 					offx = shoop.x2;
 					offy = shoop.y2;
 					repaint();
-					break ;
-				}			
+					break ;}
+				else shoop = null;
 			}	
 		}
 		if (a == "colorc"){
